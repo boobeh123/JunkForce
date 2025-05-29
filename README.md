@@ -18,6 +18,16 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 <img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" /><img src="https://img.shields.io/badge/bulma%20-00D1B2.svg?&style=for-the-badge&logo=bulma&logoColor=white">
 
 ## Version History
+# 🛠️ JunkForce Patch 0.12
+📅 **Release Date:** February 3rd, 2026
+
+---
+
+## 📢 Developer's Notes 
+
+- Removed Lost & Found's Instagram from JunkForce (i misunderstood)
+
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.11
 📅 **Release Date:** February 2nd, 2026
 
