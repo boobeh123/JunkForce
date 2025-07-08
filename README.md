@@ -6,8 +6,13 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 * Responsive to mobile viewports
 * Accessible to screen readers / Semantic HTML & ARIA
 * SEO Meta tags
-* Functional Contact Form
+* Functional Contact Form w/ Success&Failure to send toast(s)
 * WebP image format
+
+## Optimizations
+* (Need customer approval) Integrate a server witha database to submit images with contact form, incoming/outgoing email templates.
+* Styling
+* More accurate/human reading text content for the business
 
 ## Technologies
 <img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" />
