@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="64" height="64">
+  <!-- Turtle Shell (thick, tribal style) -->
+  <ellipse cx="64" cy="64" rx="38" ry="32" fill="#4A5568" stroke="#222" stroke-width="8" />
+  <!-- Shell pattern (tribal) -->
+  <path d="M64 32 Q74 48 64 64 Q54 48 64 32 Z" fill="none" stroke="#A0AEC0" stroke-width="5" />
+  <path d="M64 96 Q74 80 64 64 Q54 80 64 96 Z" fill="none" stroke="#A0AEC0" stroke-width="5" />
+  <ellipse cx="64" cy="64" rx="18" ry="14" fill="none" stroke="#A0AEC0" stroke-width="5" />
+  <!-- Head -->
+  <ellipse cx="64" cy="24" rx="12" ry="10" fill="#4A5568" stroke="#222" stroke-width="8" />
+  <!-- Flippers (front) -->
+  <ellipse cx="28" cy="54" rx="10" ry="22" fill="#4A5568" stroke="#222" stroke-width="8" transform="rotate(-25 28 54)" />
+  <ellipse cx="100" cy="54" rx="10" ry="22" fill="#4A5568" stroke="#222" stroke-width="8" transform="rotate(25 100 54)" />
+  <!-- Flippers (back) -->
+  <ellipse cx="40" cy="104" rx="8" ry="16" fill="#4A5568" stroke="#222" stroke-width="8" transform="rotate(15 40 104)" />
+  <ellipse cx="88" cy="104" rx="8" ry="16" fill="#4A5568" stroke="#222" stroke-width="8" transform="rotate(-15 88 104)" />
+  <!-- Eyes -->
+  <circle cx="58" cy="22" r="2.5" fill="#fff" />
+  <circle cx="70" cy="22" r="2.5" fill="#fff" />
+</svg> 
