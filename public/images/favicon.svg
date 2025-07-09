@@ -1,1 +1,18 @@
- 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Flatbed body -->
+  <rect x="10" y="32" width="36" height="10" rx="2" fill="#4A5568"/>
+  <!-- Railings -->
+  <rect x="12" y="28" width="2" height="8" fill="#A0AEC0"/>
+  <rect x="18" y="28" width="2" height="8" fill="#A0AEC0"/>
+  <rect x="24" y="28" width="2" height="8" fill="#A0AEC0"/>
+  <rect x="30" y="28" width="2" height="8" fill="#A0AEC0"/>
+  <rect x="36" y="28" width="2" height="8" fill="#A0AEC0"/>
+  <rect x="42" y="28" width="2" height="8" fill="#A0AEC0"/>
+  <!-- Cab -->
+  <rect x="48" y="30" width="10" height="12" rx="2" fill="#3182CE"/>
+  <rect x="52" y="32" width="4" height="4" rx="1" fill="#E2E8F0"/>
+  <!-- Wheels -->
+  <circle cx="16" cy="46" r="4" fill="#2D3748"/>
+  <circle cx="44" cy="46" r="4" fill="#2D3748"/>
+  <circle cx="52" cy="46" r="4" fill="#2D3748"/>
+</svg> 
