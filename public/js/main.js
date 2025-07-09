@@ -53,15 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showToast('Message must be between 10 and 1000 characters.', 'is-danger');
         return;
       }
-
-      axios.post('https://httpbin.org/post', { name, email, message })
-        .then(() => {
-          showToast('Message sent successfully!');
-          contactForm.reset();
-        })
-        .catch(() => {
-          showToast('Failed to send message. Please try again.', 'is-danger');
-        });
+      
     });
   }
 }); 
