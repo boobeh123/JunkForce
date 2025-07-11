@@ -26,7 +26,7 @@
     <!-- Preload Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" onload="this.rel='stylesheet'">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"></noscript>
     <!-- Preload important assets (example: logo, main image, font) -->
     <link rel="preload" as="image" href="/public/images/25.webp" />
@@ -74,7 +74,7 @@
             <div class="navbar-end">
               <a href="#main-content" class="navbar-item" aria-label="Home">Home</a>
               <a href="#services" class="navbar-item" aria-label="Our Services">Services</a>
-              <a href="#masonry-gallery" class="navbar-item" aria-label="Gallery">Gallery</a>
+              <a href="#junkforce-gallery" class="navbar-item" aria-label="Gallery">Gallery</a>
               <a href="#about" class="navbar-item" aria-label="About Us">About</a>
               <a href="#contact" class="navbar-item" aria-label="Contact Us">Contact</a>
               <div class="navbar-item">
@@ -94,7 +94,7 @@
               <div class="column is-6 has-text-white">
                 <h1 class="title is-1">JunkForce – Easy, Responsible Junk Removal with Aloha</h1>
                 <p class="subtitle is-4 mt-4 mb-5">Fast. Friendly. Eco-Friendly. Affordable.</p>
-                <a href="#contact" class="button is-primary is-medium" aria-label="Contact us">Get a Free Quote</a>
+                <a id="callToAction" href="#contact" class="button is-primary is-medium" aria-label="Contact us">Get a Free Quote</a>
               </div>
               <!-- No image side -->
             </div>
@@ -104,7 +104,7 @@
       <!-- Services Section -->
       <section id="services" class="section" aria-labelledby="services-heading" data-aos="fade-left">
         <div class="container">
-          <h2 id="services-heading" class="title is-2 has-text-left mb-6" data-aos="fade-down">Our Services</h2>
+          <h2 id="services-heading" class="title is-2 has-text-centered mb-6" data-aos="fade-down">Our Services</h2>
           <!-- Cards Row -->
           <div class="columns is-multiline">
             <!-- Residential Service Card -->
@@ -151,31 +151,34 @@
       </section>
       <!-- End Services Section -->
       
-      <!-- Masonry Gallery Section -->
-      <section id="masonry-gallery" class="section pt-0 pb-6" aria-labelledby="gallery-heading">
+      <!-- Junkforce Gallery Section -->
+      <section id="junkforce-gallery" class="section pt-0 pb-6" aria-labelledby="gallery-heading">
         <div class="container">
           <h2 id="gallery-heading" class="title is-2 has-text-centered mb-6">Our Gallery</h2>
-          <div class="masonry-gallery">
-            <div class="masonry-column">
-              <img src="/public/images/5.webp" alt="Gallery 1" class="masonry-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/11.webp" alt="Gallery 4" class="masonry-img" loading="lazy" width="180" height="220" />
+          <div class="glider-contain">
+            <div class="glider junkforce-gallery" aria-label="Image gallery" role="region">
+              <!-- <img src="/public/images/5.webp" alt="Gallery 1" class="junkforce-img" loading="lazy" width="180" height="220" />
+              <img src="/public/images/11.webp" alt="Gallery 4" class="junkforce-img" loading="lazy" width="180" height="220" />
+              <img src="/public/images/21.webp" alt="Gallery 2" class="junkforce-img tall" loading="lazy" width="180" height="220" />
+              <img src="/public/images/35.webp" alt="Gallery 5" class="junkforce-img" loading="lazy" width="180" height="220" />
+              <img src="/public/images/39.webp" alt="Gallery 3" class="junkforce-img" loading="lazy" width="180" height="220" />
+              <img src="/public/images/14.webp" alt="Gallery 6" class="junkforce-img tall" loading="lazy" width="180" height="220" />
+              <img src="/public/images/1.webp" alt="Gallery 7" class="junkforce-img" loading="lazy" width="180" height="220" />
+              <img src="/public/images/44.webp" alt="Gallery 8" class="junkforce-img" loading="lazy" width="180" height="220" /> -->
             </div>
-            <div class="masonry-column">
-              <img src="/public/images/21.webp" alt="Gallery 2" class="masonry-img tall" loading="lazy" width="180" height="220" />
-              <img src="/public/images/35.webp" alt="Gallery 5" class="masonry-img" loading="lazy" width="180" height="220" />
-            </div>
-            <div class="masonry-column">
-              <img src="/public/images/39.webp" alt="Gallery 3" class="masonry-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/14.webp" alt="Gallery 6" class="masonry-img tall" loading="lazy" width="180" height="220" />
-            </div>
-            <div class="masonry-column">
-              <img src="/public/images/1.webp" alt="Gallery 7" class="masonry-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/44.webp" alt="Gallery 8" class="masonry-img" loading="lazy" width="180" height="220" />
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <div class="gallery-controls">
+              <button id="autoplay-toggle" class="autoplay-btn" aria-label="Pause autoplay" title="Pause autoplay">
+                <span class="pause-icon">⏸</span>
+                <span class="play-icon" style="display: none;">▶</span>
+              </button>
+              <div role="tablist" class="glider-dots"></div>
             </div>
           </div>
         </div>
       </section>
-      <!-- End Masonry Gallery Section -->
+      <!-- End Junkforce Gallery Section -->
       
       <!-- About Us Section -->
       <section id="about" class="section" aria-labelledby="about-heading">
