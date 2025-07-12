@@ -15,9 +15,26 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 * More accurate/human reading text content for the business
 
 ## Technologies
-<img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" />
+<img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" /><img src="https://img.shields.io/badge/bulma%20-00D1B2.svg?&style=for-the-badge&logo=bulma&logoColor=white">
 
 ## Version History
+---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.1 — Frontend changes
+📅 **Release Date:** July 9th & 10th, 2025
+
+---
+
+## 📢 Developer's Notes - **AOS Library, Font changes, gallery changes, organize stylesheets**
+
+- My deadline for this project is coming up and I haven't done much since my initial commit
+    - I forgot to mention this on the initial commmit, but I am using the ![Bulma](https://bulma.io/) framework to style this website
+- Added AOS library for scrolling effects 
+- Changed font from Inter to Roboto
+- Changed masonry gallery format to a glider.js carousel
+    - Carousel will display all photos randomly once, before replaying
+- Added comments to the stylesheets to organize my sections
+    - Still need to clean up media queries & apply DRY principles  
+
 ---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0 — First customer as a freelance web dev
 📅 **Release Date:** July 8th, 2025
