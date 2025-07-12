@@ -27,7 +27,7 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 ## 📢 Developer's Notes - **AOS Library, Font changes, gallery changes, organize stylesheets**
 
 - My deadline for this project is coming up and I haven't done much since my initial commit
-    - I forgot to mention this on the initial commmit, but I am using the ![Bulma](https://bulma.io/) framework to style this website
+    - I forgot to mention this on the initial commmit, but I am using the <a href="https://bulma.io/">Bulma</a> framework to style this website
 - Added AOS library for scrolling effects 
 - Changed font from Inter to Roboto
 - Changed masonry gallery format to a glider.js carousel

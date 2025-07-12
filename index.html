@@ -154,17 +154,9 @@
       <!-- Junkforce Gallery Section -->
       <section id="junkforce-gallery" class="section pt-0 pb-6" aria-labelledby="gallery-heading">
         <div class="container">
-          <h2 id="gallery-heading" class="title is-2 has-text-centered mb-6">Our Gallery</h2>
-          <div class="glider-contain">
+          <h2 id="gallery-heading" class="title is-2 has-text-centered mb-6" data-aos="flip-left">Our Gallery</h2>
+          <div class="glider-contain" data-aos="zoom-out">
             <div class="glider junkforce-gallery" aria-label="Image gallery" role="region">
-              <!-- <img src="/public/images/5.webp" alt="Gallery 1" class="junkforce-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/11.webp" alt="Gallery 4" class="junkforce-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/21.webp" alt="Gallery 2" class="junkforce-img tall" loading="lazy" width="180" height="220" />
-              <img src="/public/images/35.webp" alt="Gallery 5" class="junkforce-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/39.webp" alt="Gallery 3" class="junkforce-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/14.webp" alt="Gallery 6" class="junkforce-img tall" loading="lazy" width="180" height="220" />
-              <img src="/public/images/1.webp" alt="Gallery 7" class="junkforce-img" loading="lazy" width="180" height="220" />
-              <img src="/public/images/44.webp" alt="Gallery 8" class="junkforce-img" loading="lazy" width="180" height="220" /> -->
             </div>
             <button aria-label="Previous" class="glider-prev">«</button>
             <button aria-label="Next" class="glider-next">»</button>
@@ -179,17 +171,28 @@
         </div>
       </section>
       <!-- End Junkforce Gallery Section -->
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Image viewer">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+          <button id="lightbox-close" class="lightbox-close" aria-label="Close image viewer">
+            <span aria-hidden="true">×</span>
+          </button>
+          <img id="lightbox-image" class="lightbox-image" alt="" />
+        </div>
+      </div>
       
       <!-- About Us Section -->
       <section id="about" class="section" aria-labelledby="about-heading">
-          <h2 id="about-heading" class="title is-2 mb-4 has-text-centered">About Us</h2>
+          <h2 id="about-heading" class="title is-2 mb-4 has-text-centered" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"  data-aos-delay="300">About Us</h2>
         <div class="container">
-          <div class="about-box box has-background-white p-6">
+          <div class="about-box box has-background-white p-6" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="600">
             <div class="columns is-multiline is-mobile is-centered">
               <div class="column is-12 has-text-centered mb-5">
-                <img src="/public/images/15.webp" alt="JunkForce team at work" class="about-img" loading="lazy" width="220" height="220" />
+                <img src="/public/images/15.webp" alt="JunkForce team at work" class="about-img" loading="lazy" width="220" height="220" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="900"/>
               </div>
-              <div class="column is-10-tablet is-8-desktop is-offset-1-tablet is-offset-2-desktop">
+              <div class="column is-10-tablet is-8-desktop is-offset-1-tablet is-offset-2-desktop" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="1200">
                 <div class="content is-medium">
                   <p>At JunkForce, we make it easy to clear out your space—with respect for your time, your property, and the environment. Whether it’s one item or a full truckload, our team handles every job with care, caution, and the true spirit of Aloha.</p>
                   <p><span role="img" aria-label="Eco-Friendly">♻️</span> <strong>Eco-Friendly and Community-Minded</strong><br>
@@ -223,14 +226,14 @@
       <!-- Contact Us Section -->
       <section id="contact" class="section" aria-labelledby="contact-heading">
     <div class="container">
-          <h2 id="contact-heading" class="title is-2 has-text-centered mb-6">Contact Us</h2>
+          <h2 id="contact-heading" class="title is-2 has-text-centered mb-6" data-aos="fade-down" data-aos-easing="ease-in-back">Contact Us</h2>
           <div class="columns is-centered">
             <div class="column is-6">
               <div class="content mb-5">
-                <p><span role="img" aria-label="Camera">📸</span> <strong>Get Your Free Estimate Today</strong><br>
-                Just snap a photo of your items and email it to <a href="mailto:Junkphoto@icloud.com">Junkphoto@icloud.com</a><br>
+                <p data-aos="fade-down" data-aos-easing="ease-in-back"><span role="img" aria-label="Camera">📸</span> <strong>Get Your Free Estimate Today</strong><br>
+                Just snap a photo of your items and email it to <a href="mailto:Junkphoto@icloud.com" class="underline-this">Junkphoto@icloud.com</a><br>
                 We’ll send back a quick, no-obligation estimate—easy, fast, and free.</p>
-                <p>Prefer to talk directly? Call Jim at <a href="tel:8087240444">(808) 724-0444</a> to discuss your project and discover how JunkForce can help.</p>
+                <p data-aos="fade-down" data-aos-easing="ease-in-back">Prefer to talk directly? Call Jim at <a href="tel:8087240444">(808) 724-0444</a> to discuss your project and discover how JunkForce can help.</p>
               </div>
               <form id="contactForm" aria-label="Contact form" role="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
                 <input type="hidden" name="form-name" value="contact" />
@@ -268,10 +271,70 @@
       <!-- End Contact Us Section -->
     </main>
     <footer class="footer has-background-light mt-6" role="contentinfo" aria-label="Site footer">
-      <div class="content has-text-centered">
-        <p class="mb-2">
-          &copy; <span id="year"></span> JunkForce.com – Cleanouts with Care. Solutions with Aloha. | All rights reserved.
-        </p>
+      <div class="container">
+        <div class="columns is-multiline">
+          <!-- Company Info -->
+          <div class="column is-4">
+            <h3 class="title is-5 mb-3">JunkForce</h3>
+            <p class="mb-3">Cleanouts with Care. Solutions with Aloha.</p>
+            <p class="is-size-7 has-text-grey">Serving Hawaii with eco-friendly junk removal since 2020.</p>
+          </div>
+          
+          <!-- Quick Links -->
+          <div class="column is-2">
+            <h4 class="title is-6 mb-3">Links</h4>
+            <ul class="footer-links">
+              <li><a href="#services">Garbage pickup</a></li>
+              <li><a href="#about">About JunkForce</a></li>
+              <li><a href="#junkforce-gallery"">Meet our team</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+          
+          <!-- Contact Info -->
+          <div class="column is-3">
+            <h4 class="title is-6 mb-3">Contact</h4>
+            <ul class="footer-links">
+              <li><a href="tel:8087240444">📞 (808) 724-0444</a></li>
+              <li><a href="mailto:Junkphoto@icloud.com">📧 Junkphoto@icloud.com</a></li>
+              <li>📍 Serving Hawaii</li>
+            </ul>
+          </div>
+          
+          <!-- Social & Portfolio -->
+          <div class="column is-3">
+            <h4 class="title is-6 mb-3">Connect</h4>
+            <div class="social-links mb-3">
+              <a href="https://linkedin.com" aria-label="LinkedIn" class="social-link">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://facebook.com" aria-label="Facebook" class="social-link">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="https://instagram.com" aria-label="Instagram" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <div class="columns is-mobile is-vcentered">
+            <div class="column">
+              <p class="is-size-7">
+                &copy; <span id="year"></span> JunkForce.com – All rights reserved.
+              </p>
+            </div>
+            <div class="column has-text-right">
+              <a href="https://bobby-asakawa.netlify.app/" class="portfolio-btn is-dark" aria-label="View developer portfolio" target="_blank">
+                <i class="fas fa-code"></i>
+                <span>Website Development by BTA Web Development LLC</span>
+              </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

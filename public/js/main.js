@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let next = glider.page + 1;
       if (next >= glider.dots.childElementCount) next = 0;
       glider.scrollItem(next * glider.opt.slidesToShow);
-    }, 2000);
+    }, 10000);
   }
   
   function stopAutoplay() {
@@ -160,5 +160,58 @@ document.addEventListener('DOMContentLoaded', function() {
       glider.scrollItem(glider._o.slide + 1);
     }
   });
+
+  // Lightbox functionality
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxBackdrop = document.querySelector('.lightbox-backdrop');
+
+  function openLightbox(imageSrc, imageAlt) {
+    lightboxImage.src = imageSrc;
+    lightboxImage.alt = imageAlt;
+    lightboxModal.classList.add('active');
+    lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+
+  function closeLightbox() {
+    lightboxModal.classList.remove('active');
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+
+  // Add click listeners to all carousel images
+  function addLightboxListeners() {
+    const carouselImages = document.querySelectorAll('img');
+    carouselImages.forEach(img => {
+      img.addEventListener('click', () => {
+        openLightbox(img.src, img.alt);
+      });
+      img.style.cursor = 'pointer'; // Show it's clickable
+    });
+  }
+
+  // Close lightbox event listeners
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightboxBackdrop) {
+    lightboxBackdrop.addEventListener('click', closeLightbox);
+  }
+
+  // Keyboard support (Escape key)
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
+  // Add lightbox listeners after images are added to carousel
+  if (gallery) {
+    // Wait for images to be added, then add lightbox listeners
+    setTimeout(addLightboxListeners, 1000);
+  }
 
 })
