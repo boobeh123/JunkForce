@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
+  
   // Hamburger menu functionality
   let burgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
   burgers.forEach(function (el) {
@@ -19,9 +20,65 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Close mobile menu when navigation links are clicked
+  const navbarLinks = document.querySelectorAll('.navbar-menu .navbar-item');
+  const navbarBurger = document.querySelector('.navbar-burger');
+  const navbarMenu = document.getElementById('navbarBasicExample');
+
+  navbarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navbarBurger && navbarMenu) {
+        navbarBurger.classList.remove('is-active');
+        navbarMenu.classList.remove('is-active');
+      }
+    });
+  });
+
   // Dynamic image distribution
-  const statics = ["5.webp","11.webp","21.webp","35.webp","39.webp","14.webp","1.webp","44.webp","15.webp"];
-  let allImages = Array.from({length: 44}, (_, i) => `${i+1}.webp`).filter(f => f !== "15.webp");
+  const statics = ["JunkForce company vehicles and hero.webp","JunkForce team with Solid Waste Disposal Card.webp"];
+  let allImages = [
+    "JunkForce team arriving at the job site.webp",
+    "JunkForce team at the job site and company vehicle loaded with garbage.webp",
+    "JunkForce team at the job site 6.webp",
+    "JunkForce team at the job site 5.webp",
+    "JunkForce team loading company vehicle with garbage.webp",
+    "JunkForce team operating power tools at the job site 3.webp",
+    "JunkForce team operating power tools at the job site 2.webp",
+    "JunkForce team operating power tools at the job site.webp",
+    "JunkForce team at the job site with company vehicle loaded with garbage.webp",
+    "JunkForce team at the job site 4.webp",
+    "Aiea Junk Removal and TheBus.webp",
+    "JunkForce team and company vehicle throwing shakas.webp",
+    "Aiea Junk Removal business card.webp",
+    "JunkForce company vehicle loaded with garbage 3.webp",
+    "JunkForce Team and Company Vehicle Arrive At The Job Site.webp",
+    "JunkForce company vehicle loaded with garbage 2.webp",
+    "Crawl space of residence at the job site.webp",
+    "Aiea Junk Removal company vehicle.webp",
+    "Garbage at the job site 3.webp",
+    "Garbage at the job site 2.webp",
+    "JunkForce team fueling up at 76 gas station.webp",
+    "JunkForce team and company vehicle loaded with garbage 5.webp",
+    "JunkForce team and company vehicle loaded with garbage 4.webp",
+    "JunkForce team and company vehicle loaded with garbage 3.webp",
+    "Garbage at the job site.webp",
+    "JunkForce team and company vehicle loaded with garbage 2.webp",
+    "JunkForce team and company vehicle at the job site.webp",
+    "JunkForce team sweeping at the job site.webp",
+    "JunkForce team at the job site 3.webp",
+    "JunkForce company vehicle loaded with garbage.webp",
+    "JunkForce team at Solid Waste Disposal.webp",
+    "JunkForce team and Aiea Junk Removal company vehicle.webp",
+    "JunkForce team and company vehicle loaded with garbage.webp",
+    "JunkForce team and company vehicle loaded.webp",
+    "JunkForce Team at the job site 2.webp",
+    "Garbage disposal at job site.webp",
+    "JunkForce team operating vehicle.webp",
+    "Disposing a pallet.webp",
+    "JunkForce company vehicle loaded 2.webp",
+    "JunkForce company vehicle loaded.webp",
+    "JunkForce team at the job site.webp"
+  ].filter(f => !statics.includes(f));
   
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -76,7 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
       images.forEach((filename) => {
         const img = document.createElement('img');
         img.src = `/public/images/${filename}`;
-        img.alt = `Gallery ${filename.replace('.webp','')}`;
+        const altText = filename
+          .replace('.webp', '')
+          .replace(/-/g, ' ')
+          .replace(/\b\w/g, l => l.toUpperCase())
+          .replace(/\d+$/, '');
+        img.alt = altText;
         img.className = 'masonry-img';
         img.loading = 'lazy';
         column.appendChild(img);
@@ -103,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
     lightboxImage.alt = imageAlt;
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
+    lightboxClose.focus();
     
     // Prevent background scrolling
     document.body.style.overflow = 'hidden';
@@ -114,6 +177,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeLightbox() {
     lightboxModal.classList.remove('active');
     lightboxModal.setAttribute('aria-hidden', 'true');
+
+    const lastFocusedElement = document.querySelector('.masonry-img:focus');
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
     
     // Restore background scrolling
     const scrollY = document.body.style.top;
@@ -125,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Clickable images
   function addLightboxListeners() {
-    const masonryImages = document.querySelectorAll('.masonry-img');
+    const masonryImages = document.querySelectorAll('img');
     masonryImages.forEach(img => {
       img.addEventListener('click', () => {
         openLightbox(img.src, img.alt);
@@ -151,6 +219,156 @@ document.addEventListener('DOMContentLoaded', function() {
   // Listen for clicks/keypresses after images are distributed
   if (masonryGallery) {
     setTimeout(addLightboxListeners, 100);
+  }
+
+  // Form validation and submission handling
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const buttonText = submitBtn.querySelector('.button-text');
+  const spinner = submitBtn.querySelector('.spinner');
+  const submitStatus = document.getElementById('submit-status');
+
+  // Validation functions
+  function showError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const errorElement = document.getElementById(`${fieldId}-error`);
+    field.classList.add('is-danger');
+    field.setAttribute('aria-invalid', 'true');
+    errorElement.textContent = message;
+    errorElement.classList.remove('is-hidden');
+  }
+
+  function clearError(fieldId) {
+    const field = document.getElementById(fieldId);
+    const errorElement = document.getElementById(`${fieldId}-error`);
+    field.classList.remove('is-danger');
+    field.setAttribute('aria-invalid', 'false');
+    errorElement.classList.add('is-hidden');
+  }
+
+  function validateName(name) {
+    if (!name.trim()) return 'Name is required';
+    if (name.length < 2) return 'Name must be at least 2 characters';
+    if (!/^[A-Za-z\s]+$/.test(name)) return 'Name can only contain letters and spaces';
+    return null;
+  }
+
+  function validateEmail(email) {
+    if (!email.trim()) return 'Email is required';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) return 'Please enter a valid email address';
+    return null;
+  }
+
+  function validateMessage(message) {
+    if (!message.trim()) return 'Message is required';
+    if (message.length < 10) return 'Message must be at least 10 characters';
+    if (message.length > 1000) return 'Message must be less than 1000 characters';
+    return null;
+  }
+
+  // Real-time validation
+  const formFields = ['name', 'email', 'message'];
+  formFields.forEach(fieldId => {
+    const field = document.getElementById(fieldId);
+    field.addEventListener('blur', () => {
+      const value = field.value;
+      let error = null;
+
+      switch (fieldId) {
+        case 'name':
+          error = validateName(value);
+          break;
+        case 'email':
+          error = validateEmail(value);
+          break;
+        case 'message':
+          error = validateMessage(value);
+          break;
+      }
+
+      if (error) {
+        showError(fieldId, error);
+      } else {
+        clearError(fieldId);
+      }
+    });
+
+    field.addEventListener('input', () => {
+      clearError(fieldId);
+    });
+  });
+
+  // Form submission
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Validate all fields
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const nameError = validateName(name);
+      const emailError = validateEmail(email);
+      const messageError = validateMessage(message);
+
+      // Show errors if any
+      if (nameError) showError('name', nameError);
+      if (emailError) showError('email', emailError);
+      if (messageError) showError('message', messageError);
+
+      // If no errors, submit form
+      if (!nameError && !emailError && !messageError) {
+        // Show spinner
+        buttonText.classList.add('is-hidden');
+        spinner.classList.remove('is-hidden');
+        submitBtn.disabled = true;
+        submitStatus.textContent = 'Sending message...';
+        submitStatus.classList.remove('is-hidden');
+
+        // Simulate form submission (replace with actual submission logic)
+        setTimeout(() => {
+          // Reset form
+          contactForm.reset();
+          
+          // Hide spinner
+          buttonText.classList.remove('is-hidden');
+          spinner.classList.add('is-hidden');
+          submitBtn.disabled = false;
+          submitStatus.classList.add('is-hidden');
+
+          // Show success message
+          showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+        }, 2000);
+      }
+    });
+  }
+
+  // Notification system
+  function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification is-${type} is-light`;
+    notification.style.position = 'fixed';
+    notification.style.top = '20px';
+    notification.style.right = '20px';
+    notification.style.zIndex = '9999';
+    notification.style.maxWidth = '400px';
+    notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    
+    notification.innerHTML = `
+      <button class="delete" onclick="this.parentElement.remove()"></button>
+      ${message}
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+      if (notification.parentElement) {
+        notification.remove();
+      }
+    }, 5000);
   }
 
 })
