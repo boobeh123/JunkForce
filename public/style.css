@@ -87,9 +87,7 @@ html {
   .mb-2 { 
     margin-bottom: 0.5rem; 
   }
-.underline-this {
-  border-bottom: 2px solid hsl(48, 100%, 67%);
-}
+
 /***********************************************
 * Typography
 ************************************************/
@@ -241,7 +239,26 @@ input:focus, textarea:focus, select:focus {
     transform: scaleX(-1) scale(1.02);
   }
 } */
-
+/***********************************************
+* /thank-you.html
+************************************************/
+#thank-you-page p, #thank-you-page h1 {
+  color: black;
+}
+/***********************************************
+* /terms-of-service.html
+************************************************/
+#terms-section p, #terms-section h1, #terms-section h2, #terms-section li, #terms-section address {
+  color: black;
+  
+}
+/***********************************************
+* /privacy-policy.html
+************************************************/
+#privacy-section p, #privacy-section h1, #privacy-section h2, #privacy-section li, #privacy-section address, #privacy-section strong {
+  color: black;
+  
+}
 /***********************************************
 * Hero
 ************************************************/
@@ -252,7 +269,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .hero-bg {
-  background: url('/public/images/33.webp') center center/cover no-repeat;
+  background: url('/public/images/JunkForce company vehicles and hero.webp') center center/cover no-repeat;
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
@@ -603,7 +620,7 @@ input:focus, textarea:focus, select:focus {
   position: relative;
   z-index: 1;
   margin: 0 !important;
-  padding: 3rem 0 1rem 0;
+  padding: 1rem;
 }
 
 .footer h3, .footer h4 {
@@ -720,6 +737,7 @@ input:focus, textarea:focus, select:focus {
 #submitBtn {
     position: relative;
     z-index: 3;
+    margin-top: 1rem;
 }
 /***********************************************
 * Media queries
