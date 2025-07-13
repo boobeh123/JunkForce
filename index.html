@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"></noscript>
-    <!-- Preload important assets (example: logo, main image, font) -->
+    <!-- Preload important assets hero -->
     <link rel="preload" as="image" href="/public/images/25.webp" />
     <!-- Favicon and Manifest -->
     <link rel="icon" type="image/svg+xml" href="/public/images/favicon.svg" sizes="32x32">
@@ -38,7 +38,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
     <link rel="stylesheet" href="/public/normalize.css">
     <link rel="stylesheet" href="/public/style.css">
-
   </head>
   <body>
     <header role="banner">
@@ -46,8 +45,7 @@
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item" href="#main-content" aria-label="Go to main content">
-                <!-- Logo -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 64" width="112" height="28" alt="JunkForce Logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 64" width="112" height="28" alt="JunkForce Logo" class="truck-logo">
                     <rect x="20" y="32" width="80" height="16" rx="3" fill="#4A5568"/>
                     <rect x="26" y="24" width="4" height="16" fill="#A0AEC0"/>
                     <rect x="38" y="24" width="4" height="16" fill="#A0AEC0"/>
@@ -56,11 +54,11 @@
                     <rect x="74" y="24" width="4" height="16" fill="#A0AEC0"/>
                     <rect x="86" y="24" width="4" height="16" fill="#A0AEC0"/>
                     <rect x="98" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="110" y="28" width="24" height="20" rx="4" fill="#3182CE"/>
+                    <rect x="110" y="28" width="24" height="20" rx="4" fill="hsl(141, 53%, 31%)"/>
                     <rect x="122" y="32" width="8" height="8" rx="2" fill="#E2E8F0"/>
-                    <circle cx="36" cy="54" r="8" fill="#2D3748"/>
-                    <circle cx="92" cy="54" r="8" fill="#2D3748"/>
-                    <circle cx="124" cy="54" r="8" fill="#2D3748"/>
+                    <circle cx="36" cy="54" r="8" fill="#2D3748" class="wheel wheel-1"/>
+                    <circle cx="92" cy="54" r="8" fill="#2D3748" class="wheel wheel-2"/>
+                    <circle cx="124" cy="54" r="8" fill="#2D3748" class="wheel wheel-3"/>
                   </svg> 
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -90,13 +88,11 @@
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">
-              <!-- Text Side -->
               <div class="column is-6 has-text-white">
                 <h1 class="title is-1">JunkForce – Easy, Responsible Junk Removal with Aloha</h1>
                 <p class="subtitle is-4 mt-4 mb-5">Fast. Friendly. Eco-Friendly. Affordable.</p>
-                <a id="callToAction" href="#contact" class="button is-primary is-medium" aria-label="Contact us">Get a Free Quote</a>
+                <a id="callToAction" href="#about" class="button is-primary is-medium" aria-label="Our services">Learn more</a>
               </div>
-              <!-- No image side -->
             </div>
           </div>
         </div>
@@ -105,9 +101,7 @@
       <section id="services" class="section" aria-labelledby="services-heading" data-aos="fade-left">
         <div class="container">
           <h2 id="services-heading" class="title is-2 has-text-centered mb-6" data-aos="fade-down">Our Services</h2>
-          <!-- Cards Row -->
           <div class="columns is-multiline">
-            <!-- Residential Service Card -->
             <div class="column is-4">
               <div id="service-residential" class="card" tabindex="0" aria-labelledby="card-residential-title" data-aos="flip-up">
                 <div class="card-content">
@@ -120,7 +114,6 @@
                 </footer>
               </div>
             </div>
-            <!-- Commercial Service Card -->
             <div class="column is-4">
               <div id="service-commercial" class="card" tabindex="0" aria-labelledby="card-commercial-title" data-aos="flip-down">
                 <div class="card-content">
@@ -133,7 +126,6 @@
                 </footer>
               </div>
             </div>
-            <!-- Construction Service Card -->
             <div class="column is-4">
               <div id="service-construction" class="card" tabindex="0" aria-labelledby="card-construction-title" data-aos="flip-up">
                 <div class="card-content">
@@ -155,18 +147,10 @@
       <section id="junkforce-gallery" class="section pt-0 pb-6" aria-labelledby="gallery-heading">
         <div class="container">
           <h2 id="gallery-heading" class="title is-2 has-text-centered mb-6" data-aos="flip-left">Our Gallery</h2>
-          <div class="glider-contain" data-aos="zoom-out">
-            <div class="glider junkforce-gallery" aria-label="Image gallery" role="region">
-            </div>
-            <button aria-label="Previous" class="glider-prev">«</button>
-            <button aria-label="Next" class="glider-next">»</button>
-            <div class="gallery-controls">
-              <button id="autoplay-toggle" class="autoplay-btn" aria-label="Pause autoplay" title="Pause autoplay">
-                <span class="pause-icon">⏸</span>
-                <span class="play-icon" style="display: none;">▶</span>
-              </button>
-              <div role="tablist" class="glider-dots"></div>
-            </div>
+          <div class="masonry-gallery" data-aos="zoom-out" aria-label="Image gallery" role="region">
+            <div class="masonry-column" data-column="1"></div>
+            <div class="masonry-column" data-column="2"></div>
+            <div class="masonry-column" data-column="3"></div>
           </div>
         </div>
       </section>
@@ -185,14 +169,14 @@
       
       <!-- About Us Section -->
       <section id="about" class="section" aria-labelledby="about-heading">
-          <h2 id="about-heading" class="title is-2 mb-4 has-text-centered" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"  data-aos-delay="300">About Us</h2>
+          <h2 id="about-heading" class="title is-2 mb-4 has-text-centered" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"  data-aos-delay="150">About Us</h2>
         <div class="container">
-          <div class="about-box box has-background-white p-6" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="600">
+          <div class="about-box box has-background-white p-6" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="300">
             <div class="columns is-multiline is-mobile is-centered">
               <div class="column is-12 has-text-centered mb-5">
-                <img src="/public/images/15.webp" alt="JunkForce team at work" class="about-img" loading="lazy" width="220" height="220" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="900"/>
+                <img src="/public/images/15.webp" alt="JunkForce team at work" class="about-img" loading="lazy" width="220" height="220" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="600"/>
               </div>
-              <div class="column is-10-tablet is-8-desktop is-offset-1-tablet is-offset-2-desktop" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="1200">
+              <div class="column is-10-tablet is-8-desktop is-offset-1-tablet is-offset-2-desktop" data-aos="fade-zoom-out" data-aos-easing="ease-in-back"  data-aos-delay="900">
                 <div class="content is-medium">
                   <p>At JunkForce, we make it easy to clear out your space—with respect for your time, your property, and the environment. Whether it’s one item or a full truckload, our team handles every job with care, caution, and the true spirit of Aloha.</p>
                   <p><span role="img" aria-label="Eco-Friendly">♻️</span> <strong>Eco-Friendly and Community-Minded</strong><br>
@@ -277,7 +261,7 @@
           <div class="column is-4">
             <h3 class="title is-5 mb-3">JunkForce</h3>
             <p class="mb-3">Cleanouts with Care. Solutions with Aloha.</p>
-            <p class="is-size-7 has-text-grey">Serving Hawaii with eco-friendly junk removal since 2020.</p>
+            <p class="is-size-7 has-text-grey">Serving Hawaii with eco-friendly junk removal.</p>
           </div>
           
           <!-- Quick Links -->
