@@ -19,6 +19,25 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.2 — Catching up
+📅 **Release Date:** July 11th & 12th, 2025
+
+---
+
+## 📢 Developer's Notes - **Revert back to masonry gallery, logo updates, small detail/bug fixes**
+
+- I liked how the masonry gallery filled the page more versus a carousel
+    - I did keep the dynamic images from the carousel and used it to populated images randomly onto the masonry gallery
+- I changed the color of the logo to green
+    - The logo was rotated and flipped to face left
+- I noticed early on that the skewing was a few degrees off, and if your viewport is wide enough you could see the overlapping background colors
+    - I lowered the skew by a quarter and it looks much better, for a slight change
+- I tried animating the wheels on our logo with `@keyframes` & the `rotate()` function
+    
+![I created something not from this planet](/tires.gif)
+
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.1 — Frontend changes
 📅 **Release Date:** July 9th & 10th, 2025
 
