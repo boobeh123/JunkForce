@@ -19,6 +19,17 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.3 — Caught up
+📅 **Release Date:** July 12th, 2025
+
+---
+
+## 📢 Developer's Notes - **tbd**
+
+- coming soon
+
+---------------------------------------------------------------------------------------------------------------------------
+
 # 🛠️ JunkForce Patch 0.2 — Catching up
 📅 **Release Date:** July 11th & 12th, 2025
 
@@ -36,7 +47,6 @@ A static webpage for JunkForce, a local business that removes waste & constructi
     
 ![I created something not from this planet](/tires.gif)
 
----------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.1 — Frontend changes
 📅 **Release Date:** July 9th & 10th, 2025
