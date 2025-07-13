@@ -74,6 +74,9 @@ html {
     height: auto;
     outline: 2px solid #fff;
   }
+  .is-hidden {
+    display: none !important;
+  }
   
 /***********************************************
 * Utility
