@@ -27,7 +27,13 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 ## 📢 Developer's Notes - **Changes to favicon/logo.svg files, **
 
 - The favicon/logo.svg files still had the blue logo and now it's green
-
+BrowserStack or Sauce Labs: Cloud services to test on real browsers/devices.
+Lambdatest, CrossBrowserTesting.com: Similar services.
+Emulators/Simulators: Chrome DevTools (Device Toolbar), Firefox Responsive Design Mode.
+Visual regression tools: Percy, Applitools (for screenshot diffing).
+Use browser extensions like axe, WAVE, or Lighthouse.
+Test keyboard navigation (Tab, Shift+Tab, Enter, Space, Esc).
+Try screen readers (VoiceOver on Mac, NVDA on Windows).
 
 ---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.3 — Caught up
