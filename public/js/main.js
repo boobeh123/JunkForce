@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     AOS.init();
-
+  // Dynamic date copyright
   let yearSpan = document.querySelector("#year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
-
+  // Hamburger menu functionality
   let burgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
   burgers.forEach(function (el) {
     el.addEventListener('click', function () {
@@ -19,12 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Dynamic image distribution
   const statics = ["5.webp","11.webp","21.webp","35.webp","39.webp","14.webp","1.webp","44.webp","15.webp"];
   let allImages = Array.from({length: 44}, (_, i) => `${i+1}.webp`).filter(f => f !== "15.webp");
-  let shownImages = new Set();
-  let currentImageIndex = 0;
   
-  // Fisher-Yates shuffle
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -33,135 +31,68 @@ document.addEventListener('DOMContentLoaded', function() {
     return array;
   }
   
-  // Get next image, reshuffle when all have been shown
-  function getNextImage() {
-    if (shownImages.size >= allImages.length) {
-      // All images shown, reset and reshuffle
-      shownImages.clear();
-      currentImageIndex = 0;
-      allImages = shuffleArray([...allImages]);
+  function createImageArrays() {
+    const shuffledImages = shuffleArray([...allImages]);
+    const arrays = [[], [], []];
+    const availableImages = shuffledImages.filter(image => !statics.includes(image));
+    
+    // Calculate how many images each column should get
+    const totalImages = availableImages.length;
+    const imagesPerColumn = Math.floor(totalImages / 3);
+    const remainder = totalImages % 3;
+    
+    // Distribute images evenly across 3 arrays
+    let currentIndex = 0;
+    
+    for (let columnIndex = 0; columnIndex < 3; columnIndex++) {
+      // Calculate how many images this column should get
+      let imagesForThisColumn = imagesPerColumn;
+      
+      // Distribute remainder images to first few columns
+      if (columnIndex < remainder) {
+        imagesForThisColumn++;
+      }
+      
+      // Add the calculated number of images to this column
+      for (let i = 0; i < imagesForThisColumn; i++) {
+        if (currentIndex < availableImages.length) {
+          arrays[columnIndex].push(availableImages[currentIndex]);
+          currentIndex++;
+        }
+      }
     }
     
-    const image = allImages[currentImageIndex];
-    shownImages.add(image);
-    currentImageIndex++;
-    
-    return image;
+    return arrays;
   }
   
-  const gallery = document.querySelector('.junkforce-gallery');
-  if (gallery) {
-    // Initial shuffle
-    allImages = shuffleArray(allImages);
+  // Populate masonry columns
+  function populateMasonryGallery() {
+    const imageArrays = createImageArrays();
+    const columns = document.querySelectorAll('.masonry-column');
     
-    // Add all images to gallery
-    allImages.forEach((filename, idx) => {
-      if (!statics.includes(filename)) {
+    columns.forEach((column, columnIndex) => {
+      const images = imageArrays[columnIndex];
+      
+      images.forEach((filename) => {
         const img = document.createElement('img');
         img.src = `/public/images/${filename}`;
         img.alt = `Gallery ${filename.replace('.webp','')}`;
-        img.className = 'junkforce-img';
+        img.className = 'masonry-img';
         img.loading = 'lazy';
-        img.width = 180;
-        img.height = 220;
-        gallery.appendChild(img);
-      }
+        column.appendChild(img);
+      });
     });
   }
-
-  // Glider.js initialization
-  let glider;
-  if (gallery) {
-    glider = new Glider(gallery, {
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      draggable: true,
-      dots: '.glider-dots',
-      arrows: {
-        prev: '.glider-prev',
-        next: '.glider-next'
-      },
-      responsive: [
-        {
-          breakpoint: 900,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    });
+  
+  // Initialize masonry gallery
+  const masonryGallery = document.querySelector('.masonry-gallery');
+  if (masonryGallery) {
+    populateMasonryGallery();
   }
 
-  let autoplayInterval;
-  let isAutoplayActive = true;
-  const autoplayToggle = document.getElementById('autoplay-toggle');
-  const pauseIcon = autoplayToggle?.querySelector('.pause-icon');
-  const playIcon = autoplayToggle?.querySelector('.play-icon');
-  
-  function startAutoplay() {
-    if (!glider || !isAutoplayActive) return;
-    autoplayInterval = setInterval(() => {
-      if (!glider) return;
-      let next = glider.page + 1;
-      if (next >= glider.dots.childElementCount) next = 0;
-      glider.scrollItem(next * glider.opt.slidesToShow);
-    }, 10000);
-  }
-  
-  function stopAutoplay() {
-    clearInterval(autoplayInterval);
-  }
-  
-  function toggleAutoplay() {
-    isAutoplayActive = !isAutoplayActive;
-    
-    if (isAutoplayActive) {
-      startAutoplay();
-      autoplayToggle.classList.remove('paused');
-      autoplayToggle.setAttribute('aria-label', 'Pause autoplay');
-      autoplayToggle.setAttribute('title', 'Pause autoplay');
-      pauseIcon.style.display = 'block';
-      playIcon.style.display = 'none';
-    } else {
-      stopAutoplay();
-      autoplayToggle.classList.add('paused');
-      autoplayToggle.setAttribute('aria-label', 'Resume autoplay');
-      autoplayToggle.setAttribute('title', 'Resume autoplay');
-      pauseIcon.style.display = 'none';
-      playIcon.style.display = 'block';
-    }
-  }
-  
-  if (gallery) {
-    gallery.addEventListener('mouseover', stopAutoplay);
-    gallery.addEventListener('mouseout', () => {
-      if (isAutoplayActive) startAutoplay();
-    });
-    startAutoplay();
-  }
-  
-  if (autoplayToggle) {
-    autoplayToggle.addEventListener('click', toggleAutoplay);
-  }
 
-  document.addEventListener('keydown', function(e) {
-    if (!glider) return;
-    if (e.key === 'ArrowLeft') {
-      glider.scrollItem(Math.max(0, glider._o.slide - 1));
-    } else if (e.key === 'ArrowRight') {
-      glider.scrollItem(glider._o.slide + 1);
-    }
-  });
 
-  // Lightbox functionality
+  // Lightbox/modal
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImage = document.getElementById('lightbox-image');
   const lightboxClose = document.getElementById('lightbox-close');
@@ -172,46 +103,54 @@ document.addEventListener('DOMContentLoaded', function() {
     lightboxImage.alt = imageAlt;
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.top = `-${window.scrollY}px`;
   }
 
   function closeLightbox() {
     lightboxModal.classList.remove('active');
     lightboxModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = ''; // Restore scrolling
+    
+    // Restore background scrolling
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 
-  // Add click listeners to all carousel images
+  // Clickable images
   function addLightboxListeners() {
-    const carouselImages = document.querySelectorAll('img');
-    carouselImages.forEach(img => {
+    const masonryImages = document.querySelectorAll('.masonry-img');
+    masonryImages.forEach(img => {
       img.addEventListener('click', () => {
         openLightbox(img.src, img.alt);
       });
-      img.style.cursor = 'pointer'; // Show it's clickable
     });
   }
 
-  // Close lightbox event listeners
+  // Click beside image to side to close
   if (lightboxClose) {
     lightboxClose.addEventListener('click', closeLightbox);
   }
-
   if (lightboxBackdrop) {
     lightboxBackdrop.addEventListener('click', closeLightbox);
   }
 
-  // Keyboard support (Escape key)
+  // ESC to close image 
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
       closeLightbox();
     }
   });
 
-  // Add lightbox listeners after images are added to carousel
-  if (gallery) {
-    // Wait for images to be added, then add lightbox listeners
-    setTimeout(addLightboxListeners, 1000);
+  // Listen for clicks/keypresses after images are distributed
+  if (masonryGallery) {
+    setTimeout(addLightboxListeners, 100);
   }
 
 })
