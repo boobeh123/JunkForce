@@ -19,17 +19,39 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.4 — Cross-browser testing & Accessibility testing
+📅 **Release Date:** July 13th, 2025
+
+---
+
+## 📢 Developer's Notes - **Changes to favicon/logo.svg files, **
+
+- The favicon/logo.svg files still had the blue logo and now it's green
+
+
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.3 — Caught up
 📅 **Release Date:** July 12th, 2025
 
 ---
 
-## 📢 Developer's Notes - **tbd**
+## 📢 Developer's Notes - **Semantic html, Form Input validation, Rename all images, privacy policy & terms of service page,**
 
-- coming soon
+- I am waiting for feedback from the customer and decided to leave this as my final-final draft
+    - Updated Semantic HTML elements across all `.html` files
+    - Updated ARIA labels/roles across all `.html` files
+    - Added input validation to the contact form inputs
+- Added a privacy policy & TOS page-- the only data collected is from our contact form
+    - There is no backend & no database on this website, so no data/collected is being stored in that sense
+- Cleaned up some comments so the code looks cleaner
+- Fixed a bug with the hamburger menu
+    - Clicking a link from the hamburger menu, didn't close the menu
+- Made the font-color darker so it is more visible/legible
+- I (manually) renamed most of the images as text that describes the photo
+    - I am extracting the file name (description) and storing the description as the image's alt text
+- Added a spinner to the submit button when submitting a form
 
 ---------------------------------------------------------------------------------------------------------------------------
-
 # 🛠️ JunkForce Patch 0.2 — Catching up
 📅 **Release Date:** July 11th & 12th, 2025
 
@@ -38,12 +60,12 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 ## 📢 Developer's Notes - **Revert back to masonry gallery, logo updates, small detail/bug fixes**
 
 - I liked how the masonry gallery filled the page more versus a carousel
-    - I did keep the dynamic images from the carousel and used it to populate images randomly onto the masonry gallery
-- I changed the color of the logo to green
+    - Kept the dynamic images from the carousel and used it to populate images randomly onto the masonry gallery
+- Changed the color of the logo to green
     - The logo was rotated and flipped to face left
-- I noticed early on that the skewing was a few degrees off, and if your viewport is wide enough you could see the overlapping background colors
-    - I lowered the skew by a quarter and it looks much better, for a slight change
-- I tried animating the wheels on our logo with `@keyframes` & the `rotate()` function
+- Noticed early on that the skewing was a few degrees off, and if your viewport is wide enough you could see the overlapping background colors
+    - Lowered the skew by a quarter and it looks much better, for a slight change
+- Tried animating the wheels on our logo with `@keyframes` & the `rotate()` function
     
 ![I created something not from this planet](/tires.gif)
 

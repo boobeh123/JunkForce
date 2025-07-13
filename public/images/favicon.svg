@@ -1,18 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Flatbed body -->
-  <rect x="10" y="32" width="36" height="10" rx="2" fill="#4A5568"/>
-  <!-- Railings -->
-  <rect x="12" y="28" width="2" height="8" fill="#A0AEC0"/>
-  <rect x="18" y="28" width="2" height="8" fill="#A0AEC0"/>
-  <rect x="24" y="28" width="2" height="8" fill="#A0AEC0"/>
-  <rect x="30" y="28" width="2" height="8" fill="#A0AEC0"/>
-  <rect x="36" y="28" width="2" height="8" fill="#A0AEC0"/>
-  <rect x="42" y="28" width="2" height="8" fill="#A0AEC0"/>
-  <!-- Cab -->
-  <rect x="48" y="30" width="10" height="12" rx="2" fill="#3182CE"/>
-  <rect x="52" y="32" width="4" height="4" rx="1" fill="#E2E8F0"/>
-  <!-- Wheels -->
-  <circle cx="16" cy="46" r="4" fill="#2D3748"/>
-  <circle cx="44" cy="46" r="4" fill="#2D3748"/>
-  <circle cx="52" cy="46" r="4" fill="#2D3748"/>
-</svg> 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 64" width="112" height="28" alt="JunkForce Logo" class="truck-logo" aria-hidden="true">
+                    <rect x="20" y="32" width="80" height="16" rx="3" fill="#4A5568"/>
+                    <rect x="26" y="24" width="4" height="16" fill="#A0AEC0"/>
+                    <rect x="38" y="24" width="4" height="16" fill="#A0AEC0"/>
+                    <rect x="50" y="24" width="4" height="16" fill="#A0AEC0"/>
+                    <rect x="62" y="24" width="4" height="16" fill="#A0AEC0"/>
+                    <rect x="74" y="24" width="4" height="16" fill="#A0AEC0"/>
+                    <rect x="86" y="24" width="4" height="16" fill="#A0AEC0"/>
+                    <rect x="98" y="24" width="4" height="16" fill="#A0AEC0"/>
+                    <rect x="110" y="28" width="24" height="20" rx="4" fill="hsl(141, 53%, 31%)"/>
+                    <rect x="122" y="32" width="8" height="8" rx="2" fill="#E2E8F0"/>
+                    <circle cx="36" cy="54" r="8" fill="#2D3748" class="wheel wheel-1"/>
+                    <circle cx="124" cy="54" r="8" fill="#2D3748" class="wheel wheel-3"/>
+                  </svg> 
