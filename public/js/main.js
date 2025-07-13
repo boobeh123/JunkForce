@@ -271,40 +271,40 @@ document.addEventListener('DOMContentLoaded', function() {
   const formFields = ['name', 'email', 'message'];
   formFields.forEach(fieldId => {
     const field = document.getElementById(fieldId);
-    field.addEventListener('blur', () => {
-      const value = field.value;
-      let error = null;
+    if (field) {
+      field.addEventListener('blur', () => {
+        const value = field.value;
+        let error = null;
 
-      switch (fieldId) {
-        case 'name':
-          error = validateName(value);
-          break;
-        case 'email':
-          error = validateEmail(value);
-          break;
-        case 'message':
-          error = validateMessage(value);
-          break;
-      }
+        switch (fieldId) {
+          case 'name':
+            error = validateName(value);
+            break;
+          case 'email':
+            error = validateEmail(value);
+            break;
+          case 'message':
+            error = validateMessage(value);
+            break;
+        }
 
-      if (error) {
-        showError(fieldId, error);
-      } else {
+        if (error) {
+          showError(fieldId, error);
+        } else {
+          clearError(fieldId);
+        }
+      });
+
+      field.addEventListener('input', () => {
         clearError(fieldId);
-      }
-    });
-
-    field.addEventListener('input', () => {
-      clearError(fieldId);
-    });
+      });
+    }
   });
 
-  // Form submission
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Validate all fields
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
@@ -313,62 +313,21 @@ document.addEventListener('DOMContentLoaded', function() {
       const emailError = validateEmail(email);
       const messageError = validateMessage(message);
 
-      // Show errors if any
       if (nameError) showError('name', nameError);
       if (emailError) showError('email', emailError);
       if (messageError) showError('message', messageError);
 
-      // If no errors, submit form
       if (!nameError && !emailError && !messageError) {
-        // Show spinner
+        // Show loading state
         buttonText.classList.add('is-hidden');
         spinner.classList.remove('is-hidden');
         submitBtn.disabled = true;
         submitStatus.textContent = 'Sending message...';
         submitStatus.classList.remove('is-hidden');
 
-        // Simulate form submission (replace with actual submission logic)
-        setTimeout(() => {
-          // Reset form
-          contactForm.reset();
-          
-          // Hide spinner
-          buttonText.classList.remove('is-hidden');
-          spinner.classList.add('is-hidden');
-          submitBtn.disabled = false;
-          submitStatus.classList.add('is-hidden');
-
-          // Show success message
-          showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-        }, 2000);
+        contactForm.submit();
       }
     });
-  }
-
-  // Notification system
-  function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification is-${type} is-light`;
-    notification.style.position = 'fixed';
-    notification.style.top = '20px';
-    notification.style.right = '20px';
-    notification.style.zIndex = '9999';
-    notification.style.maxWidth = '400px';
-    notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-    
-    notification.innerHTML = `
-      <button class="delete" onclick="this.parentElement.remove()"></button>
-      ${message}
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-      if (notification.parentElement) {
-        notification.remove();
-      }
-    }, 5000);
   }
 
 })
