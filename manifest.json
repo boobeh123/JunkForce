@@ -1,0 +1,21 @@
+{
+  "name": "JunkForce - Eco-Friendly Junk Removal",
+  "short_name": "JunkForce",
+  "description": "Easy, responsible junk removal with Aloha spirit. Fast, friendly, eco-friendly, and affordable service in Hawaii.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#73a240",
+  "theme_color": "#73a240",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/public/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+} 
