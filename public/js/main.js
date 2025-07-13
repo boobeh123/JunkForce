@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     "JunkForce team at the job site 4.webp",
     "JunkForce and TheBus.webp",
     "JunkForce team and company vehicle throwing shakas.webp",
-    "JunkForce Mascot.webp",
     "JunkForce company vehicle loaded with garbage 3.webp",
     "JunkForce Team and Company Vehicle Arrive At The Job Site.webp",
     "JunkForce company vehicle loaded with garbage 2.webp",
