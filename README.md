@@ -27,12 +27,23 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 ## 📢 Developer's Notes - **Changes to favicon/logo.svg files, **
 
 - The favicon/logo.svg files still had the blue logo and now it's green
-BrowserStack or Sauce Labs: Cloud services to test on real browsers/devices.
-Lambdatest, CrossBrowserTesting.com: Similar services.
+- Signed up with BrowserStack to conduct Cross-Browser Testing using their free tier
+    - May utilize SauceLabs & Lamdatest free tiers if needed with this/future projects
+    - Testingss on latest Chrome, FireFox, Safari, Edge, Mobile Safari, Mobile Chrome
+        - Test form submissions across these browsers
+        - Test image loading & image clicks across these browsers
+        - Test Mobile menu toggles across these browsers
+        - Test Buttons across these browsers
+        - Observe layout or image loading problems
+
 Emulators/Simulators: Chrome DevTools (Device Toolbar), Firefox Responsive Design Mode.
+
 Visual regression tools: Percy, Applitools (for screenshot diffing).
+
 Use browser extensions like axe, WAVE, or Lighthouse.
+
 Test keyboard navigation (Tab, Shift+Tab, Enter, Space, Esc).
+
 Try screen readers (VoiceOver on Mac, NVDA on Windows).
 
 ---------------------------------------------------------------------------------------------------------------------------
