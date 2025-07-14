@@ -19,6 +19,20 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.5 — Customer approves
+📅 **Release Date:** July 14th, 2025
+
+---
+
+## 📢 Developer's Notes - **First website sold**
+
+- This will likely be the last update, further changes may be website maintenance related
+- I created a LLC in hopes that I can keep building websites for Hawaii
+- Here's my first invoice:
+
+![0001](0001.png)
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.4 — Cross-browser testing & Accessibility testing
 📅 **Release Date:** July 13th, 2025
 
