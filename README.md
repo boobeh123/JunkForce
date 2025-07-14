@@ -24,7 +24,7 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ---
 
-## 📢 Developer's Notes - **Changes to favicon/logo.svg files, **
+## 📢 Developer's Notes - **Using BrowserStack for cross-browser testing & Google LightHouse Scoring**
 
 - The favicon/logo.svg files still had the blue logo and now it's green
 - Signed up with BrowserStack to conduct Cross-Browser Testing using their free tier
@@ -35,16 +35,8 @@ A static webpage for JunkForce, a local business that removes waste & constructi
         - Test Mobile menu toggles across these browsers
         - Test Buttons across these browsers
         - Observe layout or image loading problems
-
-Emulators/Simulators: Chrome DevTools (Device Toolbar), Firefox Responsive Design Mode.
-
-Visual regression tools: Percy, Applitools (for screenshot diffing).
-
-Use browser extensions like axe, WAVE, or Lighthouse.
-
-Test keyboard navigation (Tab, Shift+Tab, Enter, Space, Esc).
-
-Try screen readers (VoiceOver on Mac, NVDA on Windows).
+- There's about 6 (small) optimizations I can make for a perfect score:
+![lighthouse](/Junkforce-lighthouse-score.png)
 
 ---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.3 — Caught up

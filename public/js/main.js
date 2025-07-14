@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         img.alt = altText;
         img.className = 'masonry-img';
         img.loading = 'lazy';
+        img.setAttribute('role', 'listitem');
         column.appendChild(img);
       });
     });
