@@ -429,6 +429,15 @@ input:focus, textarea:focus, select:focus {
 #services-heading {
   color: #333;
 }
+
+.mascotImg {
+  border-radius: 9px;
+}
+
+.bookNow {
+  border-radius: 9px;
+  margin-top: -2px;
+}
 /***********************************************
 * Photos
 ************************************************/
