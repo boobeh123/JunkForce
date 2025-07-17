@@ -19,6 +19,23 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.6 — Paid web dev
+📅 **Release Date:** July 16th, 2025
+
+---
+
+## 📢 Developer's Notes - **Update image, paragraphs, headers**
+
+- I met with my client and learned that companies/business owners that own a website must be ADA compliant 
+    - The American Disability Act ensures that individuals with disabilities in Hawaii have equal access to employment, public services, public accommodations, and transportation.
+        - Websites are considered "places of public accommodation"
+            - This means that businesses, including those that operate primarily or solely online, must ensure their websites are accessible to individuals with disabilities.
+                - <b>WCAG is widely considered the standard for achieving accessibility under the ADA</b>
+
+I build websites using the WCAG as a standard.
+Get your WCAG compliant websites in Hawaii, for Hawaii
+https://bobby-asakawa.netlify.app/
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.5 — Customer approves
 📅 **Release Date:** July 14th, 2025
 
@@ -31,7 +48,6 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 - Here's my first invoice:
 
 ![0001](0001.png)
----------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.4 — Cross-browser testing & Accessibility testing
 📅 **Release Date:** July 13th, 2025
