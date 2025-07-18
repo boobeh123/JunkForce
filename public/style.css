@@ -277,7 +277,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .hero-bg {
-  background: url('/public/images/JunkForce company vehicles and hero.webp') center center/cover no-repeat;
+  background: url('/public/images/JunkForce\ and\ TheBus.webp') center center/cover no-repeat;
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
