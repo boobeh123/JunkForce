@@ -19,6 +19,16 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.7 — Hero & image changes
+📅 **Release Date:** July 17th, 2025
+
+---
+
+## 📢 Developer's Notes - **Update images, Remove censors**
+
+- Front end changes yo
+
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.6 — Paid web dev
 📅 **Release Date:** July 16th, 2025
 

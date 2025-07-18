@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
     "JunkForce team at the job site 3.webp",
     "JunkForce company vehicle loaded with garbage.webp",
     "JunkForce team at Solid Waste Disposal.webp",
-    "JunkForce team and JunkForce company vehicle.webp",
     "JunkForce team and company vehicle loaded with garbage.webp",
     "JunkForce team and company vehicle loaded.webp",
     "JunkForce Team at the job site 2.webp",
@@ -75,7 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
     "Disposing a pallet.webp",
     "JunkForce company vehicle loaded 2.webp",
     "JunkForce company vehicle loaded.webp",
-    "JunkForce team at the job site.webp"
+    "JunkForce team at the job site.webp",
+    "JunkForce Team and company vehicle.webp"
   ].filter(f => !statics.includes(f));
   
   function shuffleArray(array) {
