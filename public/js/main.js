@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    AOS.init();
   // Dynamic date copyright
   let yearSpan = document.querySelector("#year");
   if (yearSpan) {
@@ -165,12 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
     lightboxClose.focus();
-    
-    // Prevent background scrolling
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.top = `-${window.scrollY}px`;
   }
 
   function closeLightbox() {
@@ -181,13 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (lastFocusedElement) {
       lastFocusedElement.focus();
     }
-    
-    // Restore background scrolling
-    const scrollY = document.body.style.top;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.overflow = '';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 
   // Clickable images
