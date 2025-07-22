@@ -19,6 +19,19 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.8 — Remove AOS library & fix horizontal scrolling
+📅 **Release Date:** July 21th, 2025
+
+---
+
+## 📢 Developer's Notes - **The layout used way too many animations**
+
+- AOS was nice at first, then it loses the novelty
+- Horizontal scrolling existed on mobile & tablet
+    - I commented out all my html, went section by section (header-hero-services-gallery-about-contact-footer) to determine what was causing horizontal scrolling
+        - The implementation I used to design the skew layout caused it and there is a better approach
+
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.7 — Hero & image changes
 📅 **Release Date:** July 17th, 2025
 
