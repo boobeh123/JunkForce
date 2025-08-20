@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Dynamic image distribution
   const statics = ["JunkForce company vehicles and hero.webp","JunkForce team with Solid Waste Disposal Card.webp"];
   let allImages = [
+    "Job site 7 completed.webp",
+    "Job site 7 garbage pile.webp",
+    "JunkForce team at the job site 7.webp",
     "JunkForce team arriving at the job site.webp",
     "JunkForce team at the job site 6.webp",
     "JunkForce team loading company vehicle with garbage.webp",
@@ -44,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     "JunkForce team operating power tools at the job site.webp",
     "JunkForce team at the job site 4.webp",
     "JunkForce and TheBus.webp",
-    "JunkForce company vehicle loaded with garbage 3.webp",
     "Crawl space of residence at the job site.webp",
     "JunkForce company vehicle.webp",
     "Garbage at the job site 3.webp",
