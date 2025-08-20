@@ -410,7 +410,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   text-decoration: none;
   font-size: 0.9rem;
@@ -426,7 +426,11 @@ body {
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   /* border: 2px solid red; */
-  padding-top: 1rem;
+}
+
+.footer-bottom .columns {
+  margin: 1rem 0 0.25rem 0;
+  gap: 1rem;
 }
 
 #submitBtn {
@@ -441,7 +445,22 @@ body {
 /***********************************************
 * Media queries
 ************************************************/
+@media screen and (max-width: 1025px) {
+
+  .about-img {
+    height: 50vh;
+    width: 75vw;
+    border: 2px solid red;
+  }
+}
+
 @media (max-width: 768px) {
+
+  .about-img {
+    height: 50vh;
+    width: 100vw;
+    /* border: 2px solid blue; */
+  }
 
   .masonry-gallery {
     grid-template-columns: repeat(2, 1fr);
