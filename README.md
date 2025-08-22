@@ -19,6 +19,22 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.9 — Updated gallery
+📅 **Release Date:** August 19th ~ 21st, 2025 
+
+---
+
+## 📢 Developer's Notes - **Videos (with captions!!) & photos**
+
+- The business owner requested some photos to be removed & some photos to be added
+- I attempted to resize the photo in the about us section. Hopefully it looks better on your end!
+    - Also updated styling to the footer as my advertisement link was unclickable on mobile
+- The business owner requested some videos to be added to the website
+    - I looked into how accessibility works to include folks with hearing impairments
+        - It is essential to include caption(s) (.VTT) 
+        - YouTube Studio offers free, fast, accurate subtitles which are downloadable in several formats
+            - We are standing on the shoulders of giants
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.8 — Remove AOS library & fix horizontal scrolling
 📅 **Release Date:** July 21th, 2025
 
