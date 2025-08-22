@@ -197,6 +197,54 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(addLightboxListeners, 100);
   }
 
+  // Video accessibility enhancements
+  function enhanceVideoAccessibility() {
+    const videos = document.querySelectorAll('video');
+    
+    videos.forEach((video, index) => {
+      // Add unique IDs if they don't exist
+      if (!video.id) {
+        video.id = `video-${index + 1}`;
+      }
+      
+      // Add aria-label for better screen reader support
+      const videoCard = video.closest('.job-video-card');
+      if (videoCard) {
+        const title = videoCard.querySelector('h3');
+        if (title) {
+          video.setAttribute('aria-label', `Video: ${title.textContent}`);
+        }
+      }
+      
+      // Add keyboard support for video controls
+      video.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        }
+      });
+      
+      // Add focus indicator for video elements
+      video.addEventListener('focus', function() {
+        this.style.outline = '3px solid #73a240';
+        this.style.outlineOffset = '2px';
+      });
+      
+      video.addEventListener('blur', function() {
+        this.style.outline = 'none';
+      });
+    });
+  }
+
+  // Initialize video accessibility enhancements
+  if (document.querySelector('.job-video-card')) {
+    setTimeout(enhanceVideoAccessibility, 200);
+  }
+
   // Form validation and submission handling
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
