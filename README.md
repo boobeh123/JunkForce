@@ -19,6 +19,21 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 
 ## Version History
 ---------------------------------------------------------------------------------------------------------------------------
+# 🛠️ JunkForce Patch 0.10
+📅 **Release Date:** January 29th, 2026
+
+---
+
+## 📢 Developer's Notes 
+
+- The Navbar hamburger menu is functional on mobile viewports
+- Updates to text content/styling/image sizes
+    - The masonry gallery is now hard-coded vs dynamically loaded
+    - The lightbox modal (clickable images to enlarge) now only works on images within masonry gallery
+- The videos should now load on mobile viewports
+- Updates to styling on privacy & terms landing pages
+
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.9 — Updated gallery
 📅 **Release Date:** August 19th ~ 21st, 2025 
 
