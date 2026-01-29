@@ -7,7 +7,7 @@
     <title>JunkForce – Easy, Responsible Junk Removal with Aloha</title>
     <meta name="description" content="JunkForce makes junk removal easy, eco-friendly, and affordable. Fast, friendly, and professional service with Aloha. Serving homes, businesses, and construction sites." />
     <meta name="keywords" content="junk removal, eco-friendly, affordable, cleanout, hauling, Hawaii, Aloha, recycling, professional, insured" />
-    <meta name="author" content="JunkForce" />
+    <meta name="author" content="Bobby Asakawa" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
     <meta name="geo.region" content="US-HI" />
@@ -34,26 +34,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="JunkForce" />
-    <!-- Preload CSS -->
-    <link rel="preload" href="/public/normalize.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/public/normalize.css"></noscript>
-    <link rel="preload" href="/public/style.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/public/style.css"></noscript>
-    <!-- Preload Google Fonts -->
+    <!-- Preload Externals -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"></noscript>
-    <!-- Preload important assets hero -->
+    <!-- Load immediately -->
+    <link rel="stylesheet" href="/public/normalize.css">
+    <link rel="stylesheet" href="/public/styles.css">
+    <!-- Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload hero -->
     <link rel="preload" as="image" href="/public/images/JunkForce company vehicles and hero.webp" />
     <!-- Favicon and Manifest -->
     <link rel="icon" type="image/svg+xml" href="/public/images/favicon.svg" sizes="32x32">
     <link rel="apple-touch-icon" href="/public/images/favicon.svg">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
-    <link rel="stylesheet" href="/public/normalize.css">
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="manifest" href="/manifest.json">    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -124,349 +120,314 @@
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header role="banner">
-      <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
         <div class="container">
           <div class="navbar-brand">
-            <a class="navbar-item" href="/" aria-label="JunkForce - Go to homepage">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 64" width="112" height="28" alt="JunkForce Logo" class="truck-logo" aria-hidden="true">
-                    <rect x="20" y="32" width="80" height="16" rx="3" fill="#4A5568"/>
-                    <rect x="26" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="38" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="50" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="62" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="74" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="86" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="98" y="24" width="4" height="16" fill="#A0AEC0"/>
-                    <rect x="110" y="28" width="24" height="20" rx="4" fill="hsl(141, 53%, 31%)"/>
-                    <rect x="122" y="32" width="8" height="8" rx="2" fill="#E2E8F0"/>
-                    <circle cx="36" cy="54" r="8" fill="#2D3748" class="wheel wheel-1"/>
-                    <circle cx="124" cy="54" r="8" fill="#2D3748" class="wheel wheel-3"/>
-                  </svg> 
+            <a class="navbar-logo" href="/" aria-label="JunkForce - Go to homepage">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 64" width="112" height="28" class="truck-logo" aria-hidden="true">
+                <rect x="20" y="32" width="80" height="16" rx="3" fill="#4A5568"/>
+                <rect x="26" y="24" width="4" height="16" fill="#A0AEC0"/>
+                <rect x="38" y="24" width="4" height="16" fill="#A0AEC0"/>
+                <rect x="50" y="24" width="4" height="16" fill="#A0AEC0"/>
+                <rect x="62" y="24" width="4" height="16" fill="#A0AEC0"/>
+                <rect x="74" y="24" width="4" height="16" fill="#A0AEC0"/>
+                <rect x="86" y="24" width="4" height="16" fill="#A0AEC0"/>
+                <rect x="98" y="24" width="4" height="16" fill="#A0AEC0"/>
+                <rect x="110" y="28" width="24" height="20" rx="4" fill="hsl(141, 53%, 31%)"/>
+                <rect x="122" y="32" width="8" height="8" rx="2" fill="#E2E8F0"/>
+                <circle cx="36" cy="54" r="8" fill="#2D3748" class="wheel wheel-1"/>
+                <circle cx="124" cy="54" r="8" fill="#2D3748" class="wheel wheel-3"/>
+              </svg> 
             </a>
-            <a role="button" class="navbar-burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbarBasicExample" data-target="navbarBasicExample">
+            <button class="navbar-burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-menu">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
-            </a>
+            </button>
           </div>
-          <div id="navbarBasicExample" class="navbar-menu" role="menubar">
-            <div class="navbar-end">
-              <a href="#main-content" class="navbar-item" role="menuitem" aria-label="Go to homepage">Home</a>
-              <a href="#services" class="navbar-item" role="menuitem" aria-label="View our services">Services</a>
-              <a href="#junkforce-gallery" class="navbar-item" role="menuitem" aria-label="View our gallery">Gallery</a>
-              <a href="#about" class="navbar-item" role="menuitem" aria-label="Learn about us">About</a>
-              <a href="#completed-jobs" class="navbar-item" role="menuitem" aria-label="View completed job video">Videos</a>
-              <a href="#contact" class="navbar-item" role="menuitem" aria-label="Contact us">Contact</a>
-            </div>
+          <div id="navbar-menu" class="navbar-menu">
+            <ul class="navbar-links">
+              <li><a href="#main-content">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#videos">Videos</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
           </div>
         </div>
       </nav>
     </header>
-    <main id="main-content" role="main">
-      <section class="hero is-fullheight-with-navbar is-light hero-bg" aria-label="Hero landing section">
-        <div class="hero-body">
-          <div class="container">
-            <div class="columns is-vcentered">
-              <section class="column is-6 has-text-white">
-                <h1 class="title is-1">JunkForce – Easy, Responsible Junk Removal with Aloha</h1>
-                <p class="subtitle is-4 mt-4 mb-5">Fast. Friendly. Eco-Friendly. Affordable.</p>
-                <a id="callToAction" href="#" class="button is-dark is-danger is-outlined" aria-label="JunkForce phone number">808-724-0444</a>
-              </section>
-            </div>
+    <main id="main-content">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>JunkForce</h1>
+            <p class="hero-subtitle">Easy, Responsible Junk Removal with Aloha</p>
+            <a href="tel:8087240444" class="btn btn-primary">808-724-0444</a>
           </div>
         </div>
       </section>
       <section id="services" class="section" aria-labelledby="services-heading">
         <div class="container">
-          <h2 id="services-heading" class="title is-2 has-text-centered mb-6">Our Services</h2>
-          <div class="columns is-multiline">
-            <div class="column is-4">
-              <article id="service-residential" class="card" tabindex="0" aria-labelledby="card-residential-title">
-                <section class="card-footer">
-                  <a href="#contact" class="card-footer-item button is-primary bookNow is-fullwidth" aria-label="Book residential junk removal service">Book Now</a>
-                </section>
-                <div class="card-content">
-                  <span class="icon is-large mb-3" aria-hidden="true"><i class="fas fa-home fa-2x"></i></span>
-                  <h3 id="card-residential-title" class="title is-4">Residential Junk Removal</h3>
-                  <p>We make it easy to clear out your home with respect for your time, property, and the environment. We reuse, repurpose, and salvage items whenever possible—offering deep discounts for reusable bulk. Our team is fully insured, friendly, and always goes the extra mile.</p>
-                </div>
-              </article>
-            </div>
-            <div class="column is-4">
-              <article id="service-commercial" class="card" tabindex="0" aria-labelledby="card-commercial-title">
-                <section class="card-footer">
-                  <a href="#contact" class="card-footer-item button is-primary bookNow is-fullwidth" aria-label="Book commercial cleanout service">Book Now</a>
-                </section>
-                <div class="card-content">
-                  <span class="icon is-large mb-3" aria-hidden="true"><i class="fas fa-building fa-2x"></i></span>
-                  <h3 id="card-commercial-title" class="title is-4">Commercial Cleanouts</h3>
-                  <p>Our mission is to reduce waste, not just move it. We handle office, retail, and business junk with eco-friendly practices. We offer deep discounts for reuseable items. We're known for being punctual, reliable, and flexible to your business needs.</p>
-                  <img src="/public/images/JunkForce Mascot.webp" alt="JunkForce Mascot">
-                </div>
-              </article>
-            </div>
-            <div class="column is-4">
-              <article id="service-construction" class="card" tabindex="0" aria-labelledby="card-construction-title">
-                <section class="card-footer">
-                  <a href="#contact" class="card-footer-item button is-primary bookNow is-fullwidth" aria-label="Book construction debris removal service">Book Now</a>
-                </section>
-                <div class="card-content">
-                  <span class="icon is-large mb-3" aria-hidden="true"><i class="fas fa-tools fa-2x"></i></span>
-                  <h3 id="card-construction-title" class="title is-4">Construction Debris Removal</h3>
-                  <p>We safely remove construction debris and renovation waste, always working cautiously and cleanly. Our team is fully insured and dedicated to protecting your project site and the environment, with fair, transparent pricing and a friendly, flexible approach.</p>
-                </div>
-              </article>
-            </div>
+          <h2 id="services-heading" class="section-title">Our Services</h2>
+          <div class="services-grid">
+            <article class="service-card" aria-labelledby="residential-title">
+              <div class="card-content">
+                <h3 id="residential-title">Residential Junk Removal</h3>
+                <p>We make it easy to clear out your home with respect for your time, property, and the environment. We reuse, repurpose, and salvage items whenever possible—offering deep discounts for reusable bulk. Our team is fully insured, friendly, and always goes the extra mile.</p>
+              </div>
+              <div class="card-footer">
+                <a href="#contact" class="btn btn-secondary btn-block">Book Now</a>
+              </div>
+            </article>
+            <article class="service-card" aria-labelledby="commercial-title">
+              <div class="card-content">
+                <h3 id="commercial-title">Commercial Cleanouts</h3>
+                <p>Our mission is to reduce waste, not just move it. We handle office, retail, and business junk with eco-friendly practices. We offer deep discounts for reuseable items. We're known for being punctual, reliable, and flexible to your business needs.</p>
+                <img src="/public/images/JunkForce Mascot.webp" alt="JunkForce Mascot" class="mascot-img">
+              </div>
+              <div class="card-footer">
+                <a href="#contact" class="btn btn-secondary btn-block">Book Now</a>
+              </div>
+            </article>
+            <article class="service-card" aria-labelledby="construction-title">
+              <div class="card-content">
+                <h3 id="construction-title">Construction Debris Removal</h3>
+                <p>We safely remove construction debris and renovation waste, always working cautiously and cleanly. Our team is fully insured and dedicated to protecting your project site and the environment, with fair, transparent pricing and a friendly, flexible approach.</p>
+              </div>
+              <div class="card-footer">
+                <a href="#contact" class="btn btn-secondary btn-block">Book Now</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
-      <section id="junkforce-gallery" class="section pt-0 pb-6" aria-labelledby="gallery-heading">
-        <div class="container">
-          <h2 id="gallery-heading" class="title is-2 has-text-centered mb-6">JunkTime</h2>
-          <div class="masonry-gallery" aria-label="JunkForce work gallery" role="region" aria-describedby="gallery-description">
-            <div class="masonry-column" data-column="1" role="list" aria-label="Gallery column 1"></div>
-            <div class="masonry-column" data-column="2" role="list" aria-label="Gallery column 2"></div>
-            <div class="masonry-column" data-column="3" role="list" aria-label="Gallery column 3"></div>
-          </div>
-          <p id="gallery-description" class="is-hidden">Gallery showing JunkForce team at work, company vehicles, and job sites. Click on any image to view it larger.</p>
+<section id="gallery" class="section section-gray" aria-labelledby="gallery-heading">
+    <div class="container">
+      <h2 id="gallery-heading" class="section-title">JunkTime</h2>
+      <div class="masonry-gallery" aria-describedby="gallery-description">
+        <div class="masonry-column">
+          <img src="/public/images/Job site 7 completed.webp" alt="Job site 7 completed" loading="lazy">
+          <img src="/public/images/JunkForce team at the job site 7.webp" alt="JunkForce team at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team loading company vehicle with garbage.webp" alt="JunkForce team loading company vehicle with garbage" loading="lazy">
+          <img src="/public/images/JunkForce team operating power tools at the job site 2.webp" alt="JunkForce team operating power tools at the job site" loading="lazy">
+          <img src="/public/images/JunkForce and TheBus.webp" alt="JunkForce and TheBus" loading="lazy">
+          <img src="/public/images/JunkForce company vehicle.webp" alt="JunkForce company vehicle" loading="lazy">
+          <img src="/public/images/Garbage at the job site 2.webp" alt="Garbage at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team and company vehicle loaded with garbage 4.webp" alt="JunkForce team and company vehicle loaded with garbage" loading="lazy">
+          <img src="/public/images/JunkForce team and company vehicle loaded with garbage 2.webp" alt="JunkForce team and company vehicle loaded with garbage" loading="lazy">
+          <img src="/public/images/JunkForce team at Solid Waste Disposal.webp" alt="JunkForce team at Solid Waste Disposal" loading="lazy">
         </div>
-      </section>
-      <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer" aria-describedby="lightbox-description">
+        <div class="masonry-column">
+          <img src="/public/images/Job site 7 garbage pile.webp" alt="Job site garbage pile" loading="lazy">
+          <img src="/public/images/JunkForce team arriving at the job site.webp" alt="JunkForce team arriving at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team operating power tools at the job site 3.webp" alt="JunkForce team operating power tools at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team at the job site 4.webp" alt="JunkForce team at the job site" loading="lazy">
+          <img src="/public/images/Crawl space of residence at the job site.webp" alt="Crawl space of residence at the job site" loading="lazy">
+          <img src="/public/images/Garbage at the job site 3.webp" alt="Garbage at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team fueling up at gas station.webp" alt="JunkForce team fueling up at gas station" loading="lazy">
+          <img src="/public/images/JunkForce team and company vehicle loaded with garbage 3.webp" alt="JunkForce team and company vehicle loaded with garbage" loading="lazy">
+          <img src="/public/images/JunkForce team sweeping at the job site.webp" alt="JunkForce team sweeping at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team and company vehicle loaded.webp" alt="JunkForce team and company vehicle loaded" loading="lazy">
+        </div>
+        <div class="masonry-column">
+          <img src="/public/images/JunkForce team at the job site 6.webp" alt="JunkForce team at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team operating power tools at the job site.webp" alt="JunkForce team operating power tools at the job site" loading="lazy">
+          <img src="/public/images/JunkForce team and company vehicle loaded with garbage 5.webp" alt="JunkForce team and company vehicle loaded with garbage" loading="lazy">
+          <img src="/public/images/Garbage disposal at job site.webp" alt="Garbage disposal at job site" loading="lazy">
+          <img src="/public/images/JunkForce team operating vehicle.webp" alt="JunkForce team operating vehicle" loading="lazy">
+          <img src="/public/images/Disposing a pallet.webp" alt="Disposing a pallet" loading="lazy">
+          <img src="/public/images/JunkForce company vehicle loaded 2.webp" alt="JunkForce company vehicle loaded" loading="lazy">
+          <img src="/public/images/JunkForce company vehicle loaded.webp" alt="JunkForce company vehicle loaded" loading="lazy">
+          <img src="/public/images/JunkForce Team and company vehicle.webp" alt="JunkForce Team and company vehicle" loading="lazy">
+          <img src="/public/images/JunkForce team and company vehicle loaded with garbage.webp" alt="JunkForce team and company vehicle loaded with garbage" loading="lazy">
+        </div>
+      </div>
+      <p id="gallery-description" class="visually-hidden">Gallery showing JunkForce team at work, company vehicles, and job sites. Click on any image to view it larger.</p>
+    </div>
+  </section>
+      <div id="lightbox-modal" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
         <div class="lightbox-backdrop" aria-hidden="true"></div>
         <div class="lightbox-content">
-          <button id="lightbox-close" class="lightbox-close" aria-label="Close image viewer" aria-describedby="lightbox-description">
+          <button id="lightbox-close" class="lightbox-close" aria-label="Close image viewer">
             <span aria-hidden="true">×</span>
           </button>
           <img id="lightbox-image" class="lightbox-image" alt="Selected image from gallery" />
-          <p id="lightbox-description" class="is-hidden">Image viewer. Press Escape to close or click the X button.</p>
+          <p id="lightbox-description" class="visually-hidden">Image viewer. Press Escape to close or click the X button.</p>
         </div>
       </div>
       <section id="about" class="section" aria-labelledby="about-heading">
-        <h2 id="about-heading" class="title is-2 mb-4 has-text-centered">About Us</h2>
         <div class="container">
-          <article class="about-box box has-background-white p-6">
-            <div class="columns is-multiline is-mobile is-centered">
-              <div class="column is-12 has-text-centered mb-5">
-                <img src="/public/images/JunkForce team with Solid Waste Disposal Card.webp" alt="JunkForce team member holding Solid Waste Disposal Card" class="about-img" loading="lazy" width="220" height="220"/>
+          <h2 id="about-heading" class="section-title">About Us</h2>
+          <article class="about-content">
+            <div class="about-image">
+              <img src="/public/images/JunkForce team with Solid Waste Disposal Card.webp" alt="JunkForce team member holding Solid Waste Disposal Card" loading="lazy" width="220" height="220"/>
+            </div>
+            <div class="about-text">
+              <p>At JunkForce, we make it easy to clear out your space—with respect for your time, your property, and the environment. Whether it's one item or a full truckload, our team handles every job with care, caution, and the true spirit of Aloha.</p>
+              <div class="about-feature">
+                <h3>Eco-Friendly and Community-Minded</h3>
+                <p>We're not your average junk haulers. Our mission is to reduce waste, not just move it.</p>
+                <p>Our goal is to give usable items a second life while saving you money and making a positive impact.</p>
               </div>
-              <div class="column is-10-tablet is-8-desktop is-offset-1-tablet is-offset-2-desktop">
-                <section class="content is-medium">
-                  <p>At JunkForce, we make it easy to clear out your space—with respect for your time, your property, and the environment. Whether it's one item or a full truckload, our team handles every job with care, caution, and the true spirit of Aloha.</p>
-                  <section aria-labelledby="eco-friendly-heading">
-                    <h3 id="eco-friendly-heading" class="is-hidden">Eco-Friendly and Community-Minded</h3>
-                    <p><span role="img" aria-label="Eco-Friendly">♻️</span> <strong>Eco-Friendly and Community-Minded</strong><br>
-                      We're not your average junk haulers. Our mission is to reduce waste, not just move it.</p>
-                      <ul>
-                        <li>Aloha Spirit Filled</li>
-                        <li>We use "JunkScale" to save you money.  We offer deep discounts when your job includes reusable, salvage-able bulk! We can significantly reduce most junk removal costs.</li>
-                      </ul>
-                      <p>Our goal is to give usable items a second life while saving you money and making a positive impact.</p>
-                    </section>
-                    <section aria-labelledby="safe-professional-heading">
-                      <h3 id="safe-professional-heading" class="is-hidden">Safe, Insured, and Professional</h3>
-                      <p><span role="img" aria-label="Safe">✅</span> <strong>Safe, Insured, and Professional</strong><br>
-                        Your peace of mind matters. We are:</p>
-                        <ul>
-                          <li>Fully insured</li>
-                          <li>Trained to work safely, cautiously, and cleanly</li>
-                          <li>Dedicated to protecting the environment and the space we're working in</li>
-                          <li>Known for being punctual, reliable, and always going the extra mile</li>
-                        </ul>
-                      </section>
-                      <section aria-labelledby="fair-pricing-heading">
-                        <h3 id="fair-pricing-heading" class="is-hidden">Fair Pricing with Aloha</h3>
-                        <p><span role="img" aria-label="Fair Pricing">💲</span> <strong>Fair Pricing with Aloha</strong><br>
-                          We offer some of the most affordable rates on the island, without sacrificing quality or service. We believe everyone deserves respectful, efficient junk removal—and that's exactly what we deliver.</p>
-                        </section>
-                        <section aria-labelledby="flexible-friendly-heading">
-                          <h3 id="flexible-friendly-heading" class="is-hidden">Flexible, Friendly, and Communicative</h3>
-                          <p><span role="img" aria-label="Friendly">🤝</span> <strong>Flexible, Friendly, and Communicative</strong><br>
-                            We believe in open communication and flexibility. Every job is unique, and we're happy to make accommodations that suit your needs. Our goal is to leave every site clean, and every customer feeling like a friend.</p>
-                          </section>
-                        </section>
-                      </div>
-                    </div>
-                  </article>
+              <div class="about-feature">
+                <h3>Safe, Insured, and Professional</h3>
+                <p>Your peace of mind matters. We are:</p>
+                <ul>
+                  <li>Fully insured</li>
+                  <li>Trained to work safely, cautiously, and cleanly</li>
+                  <li>Dedicated to protecting the environment and the space we're working in</li>
+                  <li>Known for being punctual, reliable, and always going the extra mile</li>
+                </ul>
+              </div>
+              <div class="about-feature">
+                <h3>Fair Pricing with Aloha Filled Spirit</h3>
+                <p>We offer some of the most affordable rates on the island, without sacrificing quality or service. We believe everyone deserves respectful, efficient junk removal—and that's exactly what we deliver.</p>
+                <p>We use "JunkScale" to save you money. We offer deep discounts when your job includes reusable, salvage-able bulk! We can significantly reduce most junk removal costs.</p>
+              </div>
+              <div class="about-feature">
+                <h3>Flexible, Friendly, and Communicative</h3>
+                <p>We believe in open communication and flexibility. Every job is unique, and we're happy to make accommodations that suit your needs. Our goal is to leave every site clean, and every customer feeling like a friend.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="videos" class="section section-gray" aria-labelledby="videos-heading">
+        <div class="container">
+          <h2 id="videos-heading" class="section-title">JunkForce Transformation</h2>
+          <p class="section-subtitle">Every job tells a story of transformation. From cluttered chaos to clean possibilities.</p>
+          <div class="video-grid">
+            <article class="video-card" aria-labelledby="walkthrough-title">
+              <div class="card-content">
+                <h3 id="walkthrough-title">Before: Walk through the job site</h3>
+                <div class="video-container">
+                  <video id="walkthrough-video" controls preload="metadata" aria-label="Video showing initial walkthrough of cluttered residence">
+                    <source src="/public/videos/JunkForce Job Walkthrough.MP4" type="video/mp4">
+                    <track kind="captions" src="/public/videos/JunkForce Job Walkthrough.vtt" srclang="en" label="English" default>
+                    <p>Your browser doesn't support HTML5 video. 
+                      <a href="/public/videos/JunkForce Job Walkthrough.MP4" download>Download the video</a> instead.
+                    </p>
+                  </video>
                 </div>
-              </section>
-              <section id="completed-jobs" class="section" aria-labelledby="completed-jobs-heading">
-                <div class="container">
-                  <h2 id="completed-jobs-heading" class="title is-2 has-text-centered mb-6">JunkForce Transformation</h2>
-                  <p class="subtitle is-6 has-text-centered mb-5">Every job tells a story of transformation. From cluttered chaos to clean possibilities.</p>
-                  <div class="columns is-multiline">
-                    <div class="column is-4">
-                      <article class="job-video-card card" tabindex="0" aria-labelledby="job-walkthrough-title">
-                        <div class="card-content">
-                          <h3 id="job-walkthrough-title" class="title is-4 mb-3">Before: Walk through the job site</h3>
-                          <div class="video-container" role="region" aria-label="Video showing initial walkthrough of cluttered residence">
-                            <video 
-                              id="walkthrough-video"
-                              controls
-                              preload="metadata"
-                              aria-describedby="walkthrough-description">
-                              <source src="/public/videos/JunkForce Job Walkthrough.MP4" type="video/mp4">
-                              <track kind="captions" src="/public/videos/JunkForce Job Walkthrough.vtt" srclang="en" label="English" default>
-                              <p id="walkthrough-description">Your browser doesn't support HTML5 video. 
-                                <a href="/public/videos/JunkForce Job Walkthrough.MP4" download>Download the video</a> instead.
-                              </p>
-                            </video>
-                          </div>
-                          <p class="mt-3">See the initial state of the residence with all the junk that needs to be removed.</p>
-                        </div>
-                      </article>
-                    </div>
-
-                    <div class="column is-4">
-                      <article class="job-video-card card" tabindex="0" aria-labelledby="job-update-title">
-                        <div class="card-content">
-                          <h3 id="job-update-title" class="title is-4 mb-3">Junk Removal Tips</h3>
-                          <div class="video-container" role="region" aria-label="Video explaining what landfills accept as garbage">
-                            <video 
-                              id="update-video"
-                              controls
-                              preload="metadata"
-                              aria-describedby="update-description">
-                              <source src="/public/videos/JunkForce Guide to Junk Removal.MP4" type="video/mp4">
-                              <track kind="captions" src="/public/videos/JunkForce Guide to Junk Removal.vtt" srclang="en" label="English" default>
-                              <p id="update-description">Your browser doesn't support HTML5 video. 
-                                <a href="/public/videos/JunkForce Guide to Junk Removal.MP4" download>Download the video</a> instead.
-                              </p>
-                            </video>
-                          </div>
-                          <p class="mt-3">Listen and learn about the nitty gritty about junk removal.</p>
-                        </div>
-                      </article>
-                    </div>
-                    
-                    <div class="column is-4">
-                      <article class="job-video-card card" tabindex="0" aria-labelledby="job-completed-title">
-                        <div class="card-content">
-                          <h3 id="job-completed-title" class="title is-4 mb-3">After: Job Completed</h3>
-                          <div class="video-container" role="region" aria-label="Video showing final walkthrough of empty, clean residence">
-                            <video 
-                              id="completed-video"
-                              controls
-                              preload="metadata"
-                              aria-describedby="completed-description">
-                              <source src="/public/videos/JunkForce Job Completed.MP4" type="video/mp4">
-                              <track kind="captions" src="/public/videos/JunkForce Job Completed.vtt" srclang="en" label="English" default>
-                              <p id="completed-description">Your browser doesn't support HTML5 video. 
-                                <a href="/public/videos/JunkForce Job Completed.MP4" download>Download the video</a> instead.
-                              </p>
-                            </video>
-                          </div>
-                          <p class="mt-3">See the amazing transformation - a completely clean and empty space ready for new beginnings.</p>
-                        </div>
-                      </article>
-                    </div>
-                  </div>
-                  
+                <p>See the initial state of the residence with all the junk that needs to be removed.</p>
+              </div>
+            </article>
+            <article class="video-card" aria-labelledby="tips-title">
+              <div class="card-content">
+                <h3 id="tips-title">Junk Removal Tips</h3>
+                <div class="video-container">
+                  <video id="tips-video" controls preload="metadata" aria-label="Video explaining what landfills accept as garbage">
+                    <source src="/public/videos/JunkForce Guide to Junk Removal.MP4" type="video/mp4">
+                    <track kind="captions" src="/public/videos/JunkForce Guide to Junk Removal.vtt" srclang="en" label="English" default>
+                    <p>Your browser doesn't support HTML5 video. 
+                      <a href="/public/videos/JunkForce Guide to Junk Removal.MP4" download>Download the video</a> instead.
+                    </p>
+                  </video>
                 </div>
-              </section>
-              
-              <section id="contact" class="section" aria-labelledby="contact-heading">
-                <div class="container">
-                  <h2 id="contact-heading" class="title is-2 has-text-centered mb-6">Contact Us - <span class="is-dark is-danger is-outlined">(808) 724-0444</span></h2>
-                  <div class="columns is-centered">
-                    <div class="column is-6">
-                      <section class="content mb-5">
-                        <p><strong>Get Your Free Estimate Today</strong><br>
-                          Just snap a photo of your junk removal job and email it to <a href="mailto:Junkphoto@icloud.com">Junkphoto@icloud.com</a><br>
-                          We will contact you quickly! Then, when you're ready we'll come out, see the full scope of the duty, recommend cost efficient tactics with "JunkScale" and get it done!</p>
-                        </section>
-                        <form id="contactForm" aria-label="Contact form" role="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" novalidate>
-                          <input type="hidden" name="form-name" value="contact" />
-                          <p class="is-hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                          </p>
-                          <fieldset>
-                            <legend class="is-hidden">Contact Information</legend>
-                            <div class="field">
-                              <label class="label" for="name">Name <span class="has-text-danger" aria-label="required">*</span></label>
-                              <div class="control">
-                                <input class="input" type="text" id="name" name="name" required minlength="2" maxlength="100" pattern="[A-Za-z\s]+" title="Please enter a valid name (letters and spaces only)" aria-describedby="name-error" aria-invalid="false" />
-                              </div>
-                              <p class="help is-danger is-hidden" id="name-error" role="alert" aria-live="polite"></p>
-                            </div>
-                            <div class="field">
-                              <label class="label" for="email">Email <span class="has-text-danger" aria-label="required">*</span></label>
-                              <div class="control">
-                                <input class="input" type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" aria-describedby="email-error" aria-invalid="false" />
-                              </div>
-                              <p class="help is-danger is-hidden" id="email-error" role="alert" aria-live="polite"></p>
-                            </div>
-                            <div class="field">
-                              <label class="label" for="message">Message <span class="has-text-danger" aria-label="required">*</span></label>
-                              <div class="control">
-                                <textarea class="textarea" id="message" name="message" rows="5" required minlength="10" maxlength="1000" title="Please enter a message (minimum 10 characters)" aria-describedby="message-error" aria-invalid="false"></textarea>
-                              </div>
-                              <p class="help is-danger is-hidden" id="message-error" role="alert" aria-live="polite"></p>
-                            </div>
-                          </fieldset>
-                          <div class="field is-grouped is-justify-content-flex-end">
-                            <div class="control">
-                              <button type="submit" class="button is-primary" id="submitBtn" aria-describedby="submit-status">
-                                <span class="button-text">Send Message</span>
-                                <span class="spinner is-hidden" aria-hidden="true">
-                                  <i class="fas fa-spinner fa-spin"></i>
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                          <div id="submit-status" class="is-hidden" role="status" aria-live="polite"></div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </main>
-              <footer class="footer has-background-light mt-6" role="contentinfo" aria-label="Site footer">
-                <div class="container">
-                  <div class="columns is-multiline">
-                    <div class="column is-4">
-                      <h3 class="title is-5 mb-3">JunkForce</h3>
-                      <p class="mb-3">Cleanouts with Care. Solutions with Aloha.</p>
-                      <p class="is-size-7">Serving Hawaii with eco-friendly junk removal.</p>
-                    </div>
-                    <div class="column is-4">
-                      <h4 class="title is-6 mb-3">Links</h4>
-                      <nav aria-label="Footer navigation">
-                        <ul class="footer-links">
-                          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                          <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                        </ul>
-                      </nav>
-                    </div>
-                    <div class="column is-4">
-                      <h4 class="title is-6 mb-3">Contact</h4>
-                      <address class="footer-links" aria-label="Contact information">
-                        <ul class="footer-links">
-                          <li><a href="tel:8087240444">📞 (808) 724-0444</a></li>
-                          <li><a href="mailto:Junkphoto@icloud.com">📧 Junkphoto@icloud.com</a></li>
-                          <li>📍 Serving Hawaii</li>
-                        </ul>
-                      </address>
-                    </div>
-                  </div>
-                  <div class="footer-bottom">
-                    <div class="columns is-mobile is-vcentered copyright-portfolio">
-                      <div class="column">
-                        <p class="is-size-7">
-                          &copy; <span id="year"></span> JunkForce.com – All rights reserved.
-                        </p>
-                      </div>
-                      <div class="column has-text-right">
-                        <a href="https://bobby-asakawa.netlify.app/" class="portfolio-btn is-dark" aria-label="View developer portfolio" target="_blank" rel="noopener">
-                          <i class="fas fa-code" aria-hidden="true"></i>
-                          <span>Website Development by BTA Web Development LLC</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <p>Listen and learn about the nitty gritty about junk removal.</p>
+              </div>
+            </article>
+            <article class="video-card" aria-labelledby="completed-title">
+              <div class="card-content">
+                <h3 id="completed-title">After: Job Completed</h3>
+                <div class="video-container">
+                  <video id="completed-video" controls preload="metadata" aria-label="Video showing final walkthrough of empty, clean residence">
+                    <source src="/public/videos/JunkForce Job Completed.MP4" type="video/mp4">
+                    <track kind="captions" src="/public/videos/JunkForce Job Completed.vtt" srclang="en" label="English" default>
+                    <p>Your browser doesn't support HTML5 video. 
+                      <a href="/public/videos/JunkForce Job Completed.MP4" download>Download the video</a> instead.
+                    </p>
+                  </video>
                 </div>
-              </footer>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js" defer></script>
+                <p>See the amazing transformation - a completely clean and empty space ready for new beginnings.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" class="section-title">Contact Us - <span class="phone-number">(808) 724-0444</span></h2>
+          <div class="contact-wrapper">
+            <div class="contact-intro">
+              <p><strong>Get Your Free Estimate Today</strong></p>
+              <p>Just snap a photo of your junk removal job and email it to <a href="mailto:Junkphoto@icloud.com">Junkphoto@icloud.com</a></p>
+              <p>We will contact you quickly! Then, when you're ready we'll come out, see the full scope of the duty, recommend cost efficient tactics with "JunkScale" and get it done!</p>
+            </div>
+            <form id="contactForm" aria-label="Contact form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" novalidate>
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="visually-hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
+              <fieldset>
+                <legend class="visually-hidden">Contact Information</legend>
+                <div class="form-field">
+                  <label for="name">Name <span class="required">*</span></label>
+                  <input type="text" id="name" name="name" required minlength="2" maxlength="100" pattern="[A-Za-z\s]+" aria-describedby="name-error"/>
+                  <p class="error-message" id="name-error" role="alert" aria-live="polite"></p>
+                </div>                
+                <div class="form-field">
+                  <label for="email">Email <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" aria-describedby="email-error" />
+                  <p class="error-message" id="email-error" role="alert" aria-live="polite"></p>
+                </div>                
+                <div class="form-field">
+                  <label for="message">Message <span class="required">*</span></label>
+                  <textarea id="message" name="message" rows="5" required minlength="2" maxlength="1000" aria-describedby="message-error"></textarea>
+                  <p class="error-message" id="message-error" role="alert" aria-live="polite"></p>
+                </div>
+              </fieldset>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                  <span class="button-text">Send Message</span>
+                  <span class="spinner" aria-hidden="true">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="submit-status" class="visually-hidden" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>JunkForce</h3>
+            <p>Cleanouts with Care. Solutions with Aloha.</p>
+            <p class="footer-small">Serving Hawaii with eco-friendly junk removal.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Links</h4>
+            <nav aria-label="Footer navigation">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-service.html">Terms of Service</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <address>
+              <ul>
+                <li><a href="tel:8087240444">📞 (808) 724-0444</a></li>
+                <li><a href="mailto:Junkphoto@icloud.com">📧 Junkphoto@icloud.com</a></li>
+                <li>📍 Serving Hawaii</li>
+              </ul>
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> JunkForce.com – All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
     <script src="https://kit.fontawesome.com/9f91d488b5.js" crossorigin="anonymous" defer></script>
     <script src="/public/js/main.js" type="text/javascript"></script>
   </body>
