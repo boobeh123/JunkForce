@@ -768,7 +768,7 @@
     color: var(--color-primary);
   }
 
-  .social-links {
+  /* .social-links {
     display: flex;
     gap: var(--spacing-md);
     align-items: center;
@@ -790,7 +790,7 @@
   .social-links a:hover {
     background: var(--color-primary-dark);
     transform: translateY(-2px);
-  }
+  } */
 
 /***********************************************
 * Privacy policy & Terms of Use
