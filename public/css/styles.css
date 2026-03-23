@@ -833,11 +833,58 @@ About Us
 Videos
 ***************************************************************/
 
+#videos {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal cut into Contact (var(--color-white)) — top-right → bottom-left */
+#videos::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--color-white);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#videos .container {
+  position: relative;
+  z-index: 2;
+}
+
+.videos-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header — left-aligned to continue the editorial feel */
+.videos-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.videos-header .section-title {
+  text-align: left;
+  margin-bottom: var(--spacing-xs);
+}
+
+.videos-header .section-subtitle {
+  text-align: left;
+  margin-bottom: 0;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-lg);
-  /* border: 2px solid red; */
 }
 
 .video-card {
@@ -845,24 +892,76 @@ Videos
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   overflow: hidden;
-  /* border: 2px solid red; */
+  border-top: 7px solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.video-card h3 {
-  font-size: 1.25rem;
-  margin: 0 0 var(--spacing-md);
-  color: var(--color-dark);
-  /* border: 2px solid red; */
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Scroll reveal */
+.video-card.will-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.3s ease;
+}
+
+.video-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Clapperboard header bar */
+.video-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-dark);
+}
+
+.video-step-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 2rem;
+}
+
+.video-step-badge--before {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.video-step-badge--tips {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.video-step-badge--after {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.video-card-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-white);
+  opacity: 0.12;
+  letter-spacing: 0.02em;
 }
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border-radius: var(--border-radius);
-  margin-bottom: var(--spacing-sm);
-  /* border: 2px solid red; */
 }
 
 .video-container video {
@@ -872,7 +971,29 @@ Videos
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* border: 2px solid red; */
+}
+
+.video-card .card-content {
+  padding: var(--spacing-md);
+  flex: 1;
+  background-color: var(--color-dark);
+
+}
+
+.video-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-gray-light);
+}
+
+.video-card p {
+  color: var(--color-gray);
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
 }
 
 /**************************************************************
@@ -1440,7 +1561,8 @@ Media Queries
   .hero::after,
   #services::after,
   #gallery::after,
-  #about::after {
+  #about::after,
+  #videos::after {
     height: 50px;
   }
 
@@ -1509,8 +1631,17 @@ Media Queries
   }
 
   /* Videos */
+  .videos-header .section-title,
+  .videos-header .section-subtitle {
+    text-align: center;
+  }
+
   .video-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-card-num {
+    font-size: 2.5rem;
   }
 
   /* Footer */
