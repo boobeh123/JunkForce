@@ -203,32 +203,35 @@ Header
 ***************************************************************/
 
 header {
-  background: black;
-  box-shadow: var(--box-shadow);
-  position: relative;
+  position: sticky;
   top: 0;
-  z-index: 50;
-  /* border: 2px solid red; */
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.is-scrolled {
+  background: rgba(10, 10, 10, 0.97);
+  box-shadow: var(--box-shadow);
 }
 
 .navbar {
   padding: var(--spacing-sm) 0;
-  /* border: 2px solid red; */
 }
 
 .navbar .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  /* border: 2px solid red; */
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  flex-direction: row-reverse;
-  /* border: 2px solid red; */
+  flex-direction: row;
 }
 
 .truck-logo {
@@ -238,32 +241,47 @@ header {
 .navbar-logo {
   display: flex;
   align-items: center;
-  /* border: 2px solid red; */
 }
 
 .navbar-burger {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: var(--spacing-xs);
-  flex-direction: column;
-  gap: 4px;
-  border: 2px solid var(--color-dark);
+  padding: 0;
 }
 
 .navbar-burger span {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
-  background: var(--color-dark);
-  transition: var(--transition);
-  /* border: 2px solid red; */
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Burger spans morph into an X when menu is open */
+.navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .navbar-menu {
   display: flex;
-  /* border: 2px solid red; */
 }
 
 .navbar-links {
@@ -271,20 +289,46 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--spacing-xs);
-  /* border: 2px solid red; */
+  gap: var(--spacing-sm);
 }
 
 .navbar-links a {
-  color: var(--color-light);
+  position: relative;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.8rem;
   font-weight: 500;
-  padding: var(--spacing-xs) var(--spacing-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: var(--spacing-xs) 0;
+  padding-bottom: calc(var(--spacing-xs) + 4px);
   display: block;
-  /* border: 2px solid red; */
+  transition: color 0.25s ease;
+}
+
+/* Sliding green underline */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: width 0.25s ease;
 }
 
 .navbar-links a:hover {
-  color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.is-active::after {
+  width: 100%;
+}
+
+.navbar-links a.is-active {
+  color: var(--color-white);
 }
 
 /**************************************************************
@@ -986,7 +1030,7 @@ Videos
   letter-spacing: 0.02em;
   line-height: 1.1;
   margin: 0 0 var(--spacing-xs);
-  color: var(--color-gray-light);
+  color: var(--color-gray);
 }
 
 .video-card p {
@@ -1504,6 +1548,17 @@ Animations
   }
 }
 
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /**************************************************************
 Media Queries
 ***************************************************************/
@@ -1512,8 +1567,6 @@ Media Queries
 
   /* Header */
   .navbar-brand {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     width: 100%;
   }
@@ -1534,17 +1587,30 @@ Media Queries
 
   .navbar-menu.is-active {
     display: flex;
+    animation: navSlideDown 0.25s ease forwards;
   }
 
   .navbar-links {
     flex-direction: column;
     padding: var(--spacing-md);
     gap: 0;
+    width: 100%;
   }
 
   .navbar-links a {
-    padding: var(--spacing-sm);
-    border-bottom: 1px solid var(--color-gray-light);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-links li:last-child a {
+    border-bottom: none;
+  }
+
+  /* Underline animation doesn't suit full-width mobile links */
+  .navbar-links a::after {
+    display: none;
   }
 
   /* Hero */
