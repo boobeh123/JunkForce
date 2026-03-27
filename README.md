@@ -15,9 +15,22 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 * More accurate/human reading text content for the business
 
 ## Technologies
-<img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" /><img src="https://img.shields.io/badge/bulma%20-00D1B2.svg?&style=for-the-badge&logo=bulma&logoColor=white">
+<img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" />
 
 ## Version History
+# 🛠️ JunkForce Patch 0.13
+📅 **Release Date:** April 25th, 2026
+## 📢 Developer's Notes - Refactoring for fun
+
+- I revisited this project to update any bugs and touch up styling
+    - I got immersed shortly after
+    - Created a `css` folder within `public` directory & moved `normalize.css` & `styles.css` into the new folder
+    - Added `defer` to javascript `<script>` tag
+    - Removed `pattern` attribute since the `<form>` uses a `novalidate` attribute
+- Updated the hero image & removed the text on the actual photo image
+- Updated hero, services, gallery, about, videos sections & navbar
+
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.12
 📅 **Release Date:** February 3rd, 2026
 
