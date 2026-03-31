@@ -341,5 +341,13 @@
       });
     }
 
+    // Back to Top
+    const backTopLink = document.querySelector('.footer-back-top');
+    if (backTopLink) {
+      backTopLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
 
   });
