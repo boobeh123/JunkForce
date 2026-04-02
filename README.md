@@ -19,6 +19,15 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 <img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" />
 
 ## Version History
+# 🛠️ JunkForce Patch 0.14
+📅 **Release Date:** April 26th, 2026
+## 📢 Developer's Notes - Refactoring for fun 2
+
+- Add SmoothScrolling behavior
+- Fix navigational links from hamburger menu overlapping elements on other landing pages
+- Relocate images from the `JunkTime` section to its own landing page on `/gallery.html`
+- Fix button user experience 
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.13
 📅 **Release Date:** April 25th, 2026
 ## 📢 Developer's Notes - Refactoring for fun
