@@ -317,4 +317,29 @@
       init();
     }
 
+    // Contact section scroll-reveal
+    const contactCta = document.querySelector('.contact-cta');
+    const contactFormWrap = document.querySelector('.contact-form-wrap');
+
+    if (contactCta && contactFormWrap) {
+      const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.addEventListener('transitionend', () => {
+              entry.target.classList.remove('will-animate');
+            }, { once: true });
+            contactObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      [contactCta, contactFormWrap].forEach((el, i) => {
+        el.classList.add('will-animate');
+        el.style.transitionDelay = `${i * 120}ms`;
+        contactObserver.observe(el);
+      });
+    }
+
+
   });
