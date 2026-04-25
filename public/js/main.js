@@ -44,63 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   
-    // Lightbox modal functionality
-    const lightboxModal = document.getElementById('lightbox-modal');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const lightboxBackdrop = document.querySelector('.lightbox-backdrop');
-  
-    function openLightbox(imageSrc, imageAlt) {
-      lightboxImage.src = imageSrc;
-      lightboxImage.alt = imageAlt;
-      lightboxModal.classList.add('active');
-      lightboxModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      lightboxClose.focus();
-    }
-  
-    function closeLightbox() {
-      lightboxModal.classList.remove('active');
-      lightboxModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-  
-    // Add click listeners gallery images only
-    const galleryImages = document.querySelectorAll('.masonry-gallery img');
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        openLightbox(img.src, img.alt);
-      });
-      
-      // Make images keyboard accessible
-      img.setAttribute('tabindex', '0');
-      img.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openLightbox(img.src, img.alt);
-        }
-      });
-    });
-  
-    // Close lightbox on close button click
-    if (lightboxClose) {
-      lightboxClose.addEventListener('click', closeLightbox);
-    }
-  
-    // Close lightbox on backdrop click
-    if (lightboxBackdrop) {
-      lightboxBackdrop.addEventListener('click', closeLightbox);
-    }
-  
-    // Close lightbox on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
-        closeLightbox();
-      }
-    });
-
-    // Scroll-reveal
-    const serviceCards = document.querySelectorAll('.hero-content, .service-card');
+    // Service card scroll-reveal
+    const serviceCards = document.querySelectorAll('.service-card');
 
     if (serviceCards.length) {
       const cardObserver = new IntersectionObserver((entries) => {
@@ -122,6 +67,57 @@ document.addEventListener('DOMContentLoaded', function() {
       serviceCards.forEach((card) => {
         card.classList.add('will-animate');
         cardObserver.observe(card);
+      });
+    }
+
+    // Gallery scroll-reveal + See More
+    const galleryGrid = document.querySelector('.masonry-gallery');
+    const seeMoreBtn = document.querySelector('.gallery-see-more');
+    const galleryCols = document.querySelectorAll('.masonry-column');
+
+    const revealItem = (item, colIndex) => {
+      item.classList.add('will-animate');
+      setTimeout(() => {
+        item.classList.add('is-visible');
+        item.addEventListener('transitionend', () => {
+          item.classList.remove('will-animate');
+        }, { once: true });
+      }, colIndex * 80);
+    };
+
+    const galleryObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const item = entry.target;
+          const col = item.closest('.masonry-column');
+          const colIndex = Array.from(galleryCols).indexOf(col);
+          revealItem(item, colIndex);
+          galleryObserver.unobserve(item);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observe initially visible items (first 3 per column)
+    galleryCols.forEach((col) => {
+      col.querySelectorAll('.gallery-item').forEach((item, i) => {
+        if (i < 3) galleryObserver.observe(item);
+      });
+    });
+
+    // See More — reveal hidden items then observe them
+    if (seeMoreBtn && galleryGrid) {
+      seeMoreBtn.addEventListener('click', () => {
+        galleryGrid.classList.add('is-expanded');
+        seeMoreBtn.setAttribute('aria-expanded', 'true');
+        seeMoreBtn.style.display = 'none';
+
+        requestAnimationFrame(() => {
+          galleryCols.forEach((col) => {
+            col.querySelectorAll('.gallery-item').forEach((item, i) => {
+              if (i >= 3) galleryObserver.observe(item);
+            });
+          });
+        });
       });
     }
 
