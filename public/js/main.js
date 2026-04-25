@@ -99,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Service card scroll-reveal
-    const serviceCards = document.querySelectorAll('.service-card');
+    // Scroll-reveal
+    const serviceCards = document.querySelectorAll('.hero-content, .service-card');
 
     if (serviceCards.length) {
       const cardObserver = new IntersectionObserver((entries) => {
