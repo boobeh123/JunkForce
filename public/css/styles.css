@@ -297,7 +297,7 @@ Hero
   position: relative;
   overflow: hidden;
   background-image: url('/public/images/JunkForce and TheBus.webp');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: var(--color-white);
@@ -385,6 +385,46 @@ Hero
 /**************************************************************
 Services
 ***************************************************************/
+
+#services {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal cut going into the gallery section (var(--color-light))
+   Alternates direction from the hero's top-right → bottom-left cut */
+#services::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--color-light);
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Keeps cards above the boat and diagonal */
+#services .container {
+  position: relative;
+  z-index: 2;
+}
+
+.services-boat-deco {
+  position: absolute;
+  bottom: 2.5rem;
+  right: -4%;
+  width: 52%;
+  max-width: 580px;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  transform: rotate(-5deg);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
 
 .services-grid {
   display: grid;
