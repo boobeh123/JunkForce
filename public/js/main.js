@@ -98,5 +98,31 @@ document.addEventListener('DOMContentLoaded', function() {
         closeLightbox();
       }
     });
-  
+
+    // Service card scroll-reveal
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    if (serviceCards.length) {
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            const delay = Array.from(serviceCards).indexOf(card) * 130;
+            setTimeout(() => {
+              card.classList.add('is-visible');
+              card.addEventListener('transitionend', () => {
+                card.classList.remove('will-animate');
+              }, { once: true });
+            }, delay);
+            cardObserver.unobserve(card);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      serviceCards.forEach((card) => {
+        card.classList.add('will-animate');
+        cardObserver.observe(card);
+      });
+    }
+
   });
