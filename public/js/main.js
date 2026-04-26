@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     
     // Copyright year
     const yearSpan = document.querySelector("#year");
@@ -118,6 +118,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
           });
         });
+      });
+    }
+
+    // About feature scroll-reveal
+    const aboutFeatures = document.querySelectorAll('.about-feature');
+
+    if (aboutFeatures.length) {
+      const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const feature = entry.target;
+            const delay = Array.from(aboutFeatures).indexOf(feature) * 100;
+            setTimeout(() => {
+              feature.classList.add('is-visible');
+              feature.addEventListener('transitionend', () => {
+                feature.classList.remove('will-animate');
+              }, { once: true });
+            }, delay);
+            aboutObserver.unobserve(feature);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      aboutFeatures.forEach((feature) => {
+        feature.classList.add('will-animate');
+        aboutObserver.observe(feature);
       });
     }
 
