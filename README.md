@@ -23,12 +23,13 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 ## 📢 Developer's Notes - Refactoring for fun
 
 - I revisited this project to update any bugs and touch up styling
-    - I got immersed shortly after
     - Created a `css` folder within `public` directory & moved `normalize.css` & `styles.css` into the new folder
     - Added `defer` to javascript `<script>` tag
     - Removed `pattern` attribute since the `<form>` uses a `novalidate` attribute
-- Updated the hero image & removed the text on the actual photo image
-- Updated hero, services, gallery, about, videos sections & navbar
+- I got immersed shortly after
+    - Updated the hero image & removed the text on the actual photo image
+    - Updated hero, services, gallery, about, videos, contact us, footer, navbar, 3 landing pages, & meta tags
+        - Refactored styling across all sections
 
 ---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ JunkForce Patch 0.12
