@@ -738,7 +738,7 @@ About Us
   display: block;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: top;
+  object-position: 30%;
 }
 
 .about-lead {
