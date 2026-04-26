@@ -436,48 +436,58 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="section" aria-labelledby="contact-heading">
+      <section id="contact" class="section contact-dark" aria-labelledby="contact-heading">
         <div class="container">
-          <h2 id="contact-heading" class="section-title">Contact Us - <span class="phone-number">(808) 724-0444</span></h2>
-          <div class="contact-wrapper">
-            <div class="contact-intro">
-              <p><strong>Get Your Free Estimate Today</strong></p>
-              <p>Just snap a photo of your junk removal job and email it to <a href="mailto:Junkphoto@icloud.com">Junkphoto@icloud.com</a></p>
-              <p>We will contact you quickly! Then, when you're ready we'll come out, see the full scope of the duty, recommend cost efficient tactics with "JunkScale" and get it done!</p>
-            </div>
-            <form id="contactForm" aria-label="Contact form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" novalidate>
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="visually-hidden">
-                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-              </p>
-              <fieldset>
-                <legend class="visually-hidden">Contact Information</legend>
-                <div class="form-field">
-                  <label for="name">Name <span class="required">*</span></label>
-                  <input type="text" id="name" name="name" required minlength="2" maxlength="100" aria-describedby="name-error"/>
-                  <p class="error-message" id="name-error" role="alert" aria-live="polite"></p>
-                </div>                
-                <div class="form-field">
-                  <label for="email">Email <span class="required">*</span></label>
-                  <input type="email" id="email" name="email" required aria-describedby="email-error" />
-                  <p class="error-message" id="email-error" role="alert" aria-live="polite"></p>
-                </div>                
-                <div class="form-field">
-                  <label for="message">Message <span class="required">*</span></label>
-                  <textarea id="message" name="message" rows="5" required minlength="2" maxlength="1000" aria-describedby="message-error"></textarea>
-                  <p class="error-message" id="message-error" role="alert" aria-live="polite"></p>
-                </div>
-              </fieldset>
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary" id="submitBtn">
-                  <span class="button-text">Send Message</span>
-                  <span class="spinner" aria-hidden="true">
-                    <i class="fas fa-spinner fa-spin"></i>
-                  </span>
-                </button>
+          <div class="contact-grid">
+            <div class="contact-cta">
+              <p class="contact-eyebrow">Free Estimate</p>
+              <h2 id="contact-heading" class="contact-heading">Let's<br>Talk.</h2>
+              <div class="contact-rule"></div>
+              <a href="tel:8087240444" class="contact-phone-link">
+                <span class="material-icons" aria-hidden="true">phone</span>
+                (808) 724-0444
+              </a>
+              <p class="contact-pitch">Ready to clear out your space? Snap a photo and email it to <a href="mailto:Junkphoto@icloud.com" class="contact-email-link">Junkphoto@icloud.com</a> for a quick estimate. We'll get back to you fast — then come out, assess the job, and get it done with Aloha.</p>
+              <div class="contact-junkscale">
+                <span class="material-icons contact-junkscale-icon" aria-hidden="true">savings</span>
+                <p><strong>JunkScale Savings</strong><br>Have reusable or salvageable bulk? We offer deep discounts and can significantly reduce your removal cost.</p>
               </div>
-              <div id="submit-status" class="visually-hidden" role="status" aria-live="polite"></div>
-            </form>
+            </div>
+            <div class="contact-form-wrap">
+              <form id="contactForm" aria-label="Contact form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" novalidate>
+                <input type="hidden" name="form-name" value="contact" />
+                <p class="visually-hidden">
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                <fieldset>
+                  <legend class="visually-hidden">Contact Information</legend>
+                  <div class="form-field">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="100" aria-describedby="name-error"/>
+                    <p class="error-message" id="name-error" role="alert" aria-live="polite"></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required aria-describedby="email-error"/>
+                    <p class="error-message" id="email-error" role="alert" aria-live="polite"></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required minlength="2" maxlength="1000" aria-describedby="message-error"></textarea>
+                    <p class="error-message" id="message-error" role="alert" aria-live="polite"></p>
+                  </div>
+                </fieldset>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                    <span class="button-text">Send Message</span>
+                    <span class="spinner" aria-hidden="true">
+                      <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                  </button>
+                </div>
+                <div id="submit-status" class="visually-hidden" role="status" aria-live="polite"></div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
