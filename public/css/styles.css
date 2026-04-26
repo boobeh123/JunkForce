@@ -1851,12 +1851,13 @@ Media Queries
 
   .navbar-menu {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 68px;
     left: 0;
     right: 0;
     background: var(--color-primary-dark);
     box-shadow: var(--box-shadow);
+    z-index: 200;
   }
 
   .navbar-menu.is-active {
