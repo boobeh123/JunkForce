@@ -147,4 +147,142 @@
       });
     }
 
+    // Auto-pause other videos when one starts playing
+    const allVideos = document.querySelectorAll('.video-container video');
+
+    allVideos.forEach((video) => {
+      video.addEventListener('play', () => {
+        allVideos.forEach((other) => {
+          if (other !== video && !other.paused) {
+            other.pause();
+          }
+        });
+      });
+    });
+
+    // Video card scroll-reveal
+    const videoCards = document.querySelectorAll('.video-card');
+
+    if (videoCards.length) {
+      const videoCardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            const delay = Array.from(videoCards).indexOf(card) * 130;
+            setTimeout(() => {
+              card.classList.add('is-visible');
+              card.addEventListener('transitionend', () => {
+                card.classList.remove('will-animate');
+              }, { once: true });
+            }, delay);
+            videoCardObserver.unobserve(card);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      videoCards.forEach((card) => {
+        card.classList.add('will-animate');
+        videoCardObserver.observe(card);
+      });
+    }
+
+    // Videos section — rising particle background
+    const particleCanvas = document.querySelector('.videos-particles');
+
+    if (particleCanvas) {
+      const ctx = particleCanvas.getContext('2d');
+      const videosSection = document.querySelector('#videos');
+      const PARTICLE_COUNT = 55;
+      let animationId = null;
+      let particles = [];
+
+      function resizeCanvas() {
+        particleCanvas.width = videosSection.offsetWidth;
+        particleCanvas.height = videosSection.offsetHeight;
+      }
+
+      function createParticle(randomiseY = false) {
+        const maxLife = Math.random() * 420 + 1080;
+        return {
+          x: Math.random() * particleCanvas.width,
+          y: randomiseY
+            ? Math.random() * particleCanvas.height
+            : particleCanvas.height + Math.random() * 40,
+          size: Math.random() * 7.5 + 1,
+          speedY: Math.random() * 0.85 + 0.2,
+          speedX: (Math.random() - 0.15) * 0.75,
+          maxOpacity: Math.random() * 0.92 + 0.06,
+          opacity: 0,
+          life: randomiseY ? Math.floor(Math.random() * maxLife) : 0,
+          maxLife,
+        };
+      }
+
+      function updateParticle(p) {
+        p.life++;
+        p.x += p.speedX;
+        p.y -= p.speedY;
+
+        const progress = p.life / p.maxLife;
+        if (progress < 0.2) {
+          p.opacity = (progress / 0.2) * p.maxOpacity;
+        } else if (progress > 0.7) {
+          p.opacity = ((1 - progress) / 0.3) * p.maxOpacity;
+        } else {
+          p.opacity = p.maxOpacity;
+        }
+
+        if (p.life >= p.maxLife || p.y < -10) {
+          Object.assign(p, createParticle(false));
+        }
+      }
+
+      function drawParticle(p) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(141, 53%, 31%, ${p.opacity})`;
+        ctx.fill();
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+        particles.forEach((p) => {
+          updateParticle(p);
+          drawParticle(p);
+        });
+        animationId = requestAnimationFrame(animate);
+      }
+
+      function init() {
+        resizeCanvas();
+        particles = Array.from(
+          { length: PARTICLE_COUNT },
+          (_, i) => createParticle(i < PARTICLE_COUNT)
+        );
+      }
+
+      // Only animate when the section is visible
+      const particleObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (!animationId) animate();
+            } else {
+              cancelAnimationFrame(animationId);
+              animationId = null;
+            }
+          });
+        },
+        { threshold: 0.05 }
+      );
+
+      particleObserver.observe(videosSection);
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+      });
+
+      init();
+    }
+
   });
