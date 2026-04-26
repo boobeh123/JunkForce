@@ -10,38 +10,70 @@
     const navToggle = document.querySelector('.navbar-burger');
     const navMenu = document.querySelector('.navbar-menu');
     const navLinks = document.querySelectorAll('.navbar-links a');
-    
+
     if (navToggle && navMenu) {
       // Toggle menu on burger click
       navToggle.addEventListener('click', () => {
         const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', !isExpanded);
         navMenu.classList.toggle('is-active');
+        navToggle.classList.toggle('is-active');
       });
-  
+
       // Close menu when clicking a nav link
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           navToggle.setAttribute('aria-expanded', 'false');
           navMenu.classList.remove('is-active');
+          navToggle.classList.remove('is-active');
         });
       });
-  
+
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
           navToggle.setAttribute('aria-expanded', 'false');
           navMenu.classList.remove('is-active');
+          navToggle.classList.remove('is-active');
         }
       });
-  
+
       // Close menu on Escape key
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
           navToggle.setAttribute('aria-expanded', 'false');
           navMenu.classList.remove('is-active');
+          navToggle.classList.remove('is-active');
         }
       });
+    }
+
+    // Sticky nav — solidify background on scroll
+    const mainHeader = document.querySelector('header');
+    if (mainHeader) {
+      window.addEventListener('scroll', () => {
+        mainHeader.classList.toggle('is-scrolled', window.scrollY > 60);
+      }, { passive: true });
+    }
+
+    // Active nav link tracking via IntersectionObserver
+    const navSections = document.querySelectorAll('main section[id]');
+    const navLinkItems = document.querySelectorAll('.navbar-links a');
+
+    if (navSections.length && navLinkItems.length) {
+      const activeLinkObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinkItems.forEach((link) => link.classList.remove('is-active'));
+            const activeLink = document.querySelector(
+              `.navbar-links a[href="#${entry.target.id}"]`
+            );
+            if (activeLink) activeLink.classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -75% 0px' });
+
+      navSections.forEach((section) => activeLinkObserver.observe(section));
     }
   
     // Service card scroll-reveal
