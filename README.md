@@ -5,9 +5,10 @@ A static webpage for JunkForce, a local business that removes waste & constructi
 * Static webpage deployed with Netlify
 * Responsive to mobile viewports
 * Accessible to screen readers / Semantic HTML & ARIA
-* SEO Meta tags
-* Functional Contact Form w/ Success&Failure to send toast(s)
+* Meta tags & Structured Data
+* Functional Contact Form w/ thank you landing page
 * WebP image format
+* Custom domain support (https://junkforce.net/)
 
 ## Optimizations
 * (Need customer approval) Integrate a server witha database to submit images with contact form, incoming/outgoing email templates.
