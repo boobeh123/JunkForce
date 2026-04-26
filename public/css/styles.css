@@ -144,7 +144,7 @@ Accessibility
   position: absolute;
   top: -40px;
   left: 0;
-  background: black;
+  background: transparent;
   color: var(--color-white);
   padding: var(--spacing-sm);
   text-decoration: none;
@@ -787,9 +787,22 @@ About Us
 
 .about-lead {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-lg);
   height: 100%;
   padding-top: var(--spacing-sm);
+}
+
+.about-lead-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  align-self: flex-start;
+}
+
+.about-lead-cta .material-icons {
+  font-size: 1.1rem;
 }
 
 .about-lead-text {
@@ -1021,7 +1034,8 @@ Videos
   padding: var(--spacing-md);
   flex: 1;
   background-color: var(--color-dark);
-
+  display: flex;
+  flex-direction: column;
 }
 
 .video-card h3 {
@@ -1038,6 +1052,20 @@ Videos
   margin: 0;
   font-size: var(--font-size-sm);
   line-height: 1.6;
+  flex: 1;
+}
+
+.video-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+  width: 100%;
+}
+
+.video-card-cta .material-icons {
+  font-size: 1rem;
 }
 
 /**************************************************************
