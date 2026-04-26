@@ -369,53 +369,68 @@
         </div>
       </section>
       <section id="videos" class="section section-gray" aria-labelledby="videos-heading">
+        <canvas class="videos-particles" aria-hidden="true"></canvas>
         <div class="container">
-          <h2 id="videos-heading" class="section-title">JunkForce Transformation</h2>
-          <p class="section-subtitle">Every job tells a story of transformation. From cluttered chaos to clean possibilities.</p>
+          <div class="videos-header">
+            <h2 id="videos-heading" class="section-title">JunkForce Transformation</h2>
+            <p class="section-subtitle">Every job tells a story. From cluttered chaos to clean possibilities.</p>
+          </div>
           <div class="video-grid">
             <article class="video-card" aria-labelledby="walkthrough-title">
+              <div class="video-card-header">
+                <span class="video-step-badge video-step-badge--before">Before</span>
+                <span class="video-card-num">01</span>
+              </div>
+              <div class="video-container">
+                <video id="walkthrough-video" controls preload="metadata" aria-label="Video showing initial walkthrough of cluttered residence">
+                  <source src="/public/videos/JunkForce Job Walkthrough.MP4" type="video/mp4">
+                  <track kind="captions" src="/public/videos/JunkForce Job Walkthrough.vtt" srclang="en" label="English" default>
+                  <p>Your browser doesn't support HTML5 video.
+                    <a href="/public/videos/JunkForce Job Walkthrough.MP4" download>Download the video</a> instead.
+                  </p>
+                </video>
+              </div>
               <div class="card-content">
-                <h3 id="walkthrough-title">Before: Walk through the job site</h3>
-                <div class="video-container">
-                  <video id="walkthrough-video" controls preload="metadata" aria-label="Video showing initial walkthrough of cluttered residence">
-                    <source src="/public/videos/JunkForce Job Walkthrough.MP4" type="video/mp4">
-                    <track kind="captions" src="/public/videos/JunkForce Job Walkthrough.vtt" srclang="en" label="English" default>
-                    <p>Your browser doesn't support HTML5 video. 
-                      <a href="/public/videos/JunkForce Job Walkthrough.MP4" download>Download the video</a> instead.
-                    </p>
-                  </video>
-                </div>
+                <h3 id="walkthrough-title">Walk Through the Job Site</h3>
                 <p>See the initial state of the residence with all the junk that needs to be removed.</p>
               </div>
             </article>
             <article class="video-card" aria-labelledby="tips-title">
+              <div class="video-card-header">
+                <span class="video-step-badge video-step-badge--tips">Tips</span>
+                <span class="video-card-num">02</span>
+              </div>
+              <div class="video-container">
+                <video id="tips-video" controls preload="metadata" aria-label="Video explaining what landfills accept as garbage">
+                  <source src="/public/videos/JunkForce Guide to Junk Removal.MP4" type="video/mp4">
+                  <track kind="captions" src="/public/videos/JunkForce Guide to Junk Removal.vtt" srclang="en" label="English" default>
+                  <p>Your browser doesn't support HTML5 video.
+                    <a href="/public/videos/JunkForce Guide to Junk Removal.MP4" download>Download the video</a> instead.
+                  </p>
+                </video>
+              </div>
               <div class="card-content">
                 <h3 id="tips-title">Junk Removal Tips</h3>
-                <div class="video-container">
-                  <video id="tips-video" controls preload="metadata" aria-label="Video explaining what landfills accept as garbage">
-                    <source src="/public/videos/JunkForce Guide to Junk Removal.MP4" type="video/mp4">
-                    <track kind="captions" src="/public/videos/JunkForce Guide to Junk Removal.vtt" srclang="en" label="English" default>
-                    <p>Your browser doesn't support HTML5 video. 
-                      <a href="/public/videos/JunkForce Guide to Junk Removal.MP4" download>Download the video</a> instead.
-                    </p>
-                  </video>
-                </div>
-                <p>Listen and learn about the nitty gritty about junk removal.</p>
+                <p>Learn the nitty gritty about junk removal from our team.</p>
               </div>
             </article>
             <article class="video-card" aria-labelledby="completed-title">
+              <div class="video-card-header">
+                <span class="video-step-badge video-step-badge--after">After</span>
+                <span class="video-card-num">03</span>
+              </div>
+              <div class="video-container">
+                <video id="completed-video" controls preload="metadata" aria-label="Video showing final walkthrough of empty, clean residence">
+                  <source src="/public/videos/JunkForce Job Completed.MP4" type="video/mp4">
+                  <track kind="captions" src="/public/videos/JunkForce Job Completed.vtt" srclang="en" label="English" default>
+                  <p>Your browser doesn't support HTML5 video.
+                    <a href="/public/videos/JunkForce Job Completed.MP4" download>Download the video</a> instead.
+                  </p>
+                </video>
+              </div>
               <div class="card-content">
-                <h3 id="completed-title">After: Job Completed</h3>
-                <div class="video-container">
-                  <video id="completed-video" controls preload="metadata" aria-label="Video showing final walkthrough of empty, clean residence">
-                    <source src="/public/videos/JunkForce Job Completed.MP4" type="video/mp4">
-                    <track kind="captions" src="/public/videos/JunkForce Job Completed.vtt" srclang="en" label="English" default>
-                    <p>Your browser doesn't support HTML5 video. 
-                      <a href="/public/videos/JunkForce Job Completed.MP4" download>Download the video</a> instead.
-                    </p>
-                  </video>
-                </div>
-                <p>See the amazing transformation - a completely clean and empty space ready for new beginnings.</p>
+                <h3 id="completed-title">Job Completed</h3>
+                <p>A completely clean and empty space, ready for new beginnings.</p>
               </div>
             </article>
           </div>
