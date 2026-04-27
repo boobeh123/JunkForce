@@ -102,9 +102,7 @@
       });
     }
 
-    // Gallery scroll-reveal + See More
-    const galleryGrid = document.querySelector('.masonry-gallery');
-    const seeMoreBtn = document.querySelector('.gallery-see-more');
+    // Gallery scroll-reveal
     const galleryCols = document.querySelectorAll('.masonry-column');
 
     const revealItem = (item, colIndex) => {
@@ -135,23 +133,6 @@
         if (i < 3) galleryObserver.observe(item);
       });
     });
-
-    // See More — reveal hidden items then observe them
-    if (seeMoreBtn && galleryGrid) {
-      seeMoreBtn.addEventListener('click', () => {
-        galleryGrid.classList.add('is-expanded');
-        seeMoreBtn.setAttribute('aria-expanded', 'true');
-        seeMoreBtn.style.display = 'none';
-
-        requestAnimationFrame(() => {
-          galleryCols.forEach((col) => {
-            col.querySelectorAll('.gallery-item').forEach((item, i) => {
-              if (i >= 3) galleryObserver.observe(item);
-            });
-          });
-        });
-      });
-    }
 
     // About feature scroll-reveal
     const aboutFeatures = document.querySelectorAll('.about-feature');
@@ -347,6 +328,44 @@
       backTopLink.addEventListener('click', (e) => {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Gallery page — dynamic photo count
+    const photoCountEl = document.querySelector('#photo-count');
+    const galleryPageGrid = document.querySelector('.gallery-page-grid');
+
+    if (photoCountEl && galleryPageGrid) {
+      const total = galleryPageGrid.querySelectorAll('.gallery-item').length;
+      photoCountEl.textContent = total;
+    }
+
+    // Gallery page — observe all items (no See More needed)
+    const galleryPageCols = document.querySelectorAll('.gallery-page-grid .masonry-column');
+
+    if (galleryPageCols.length) {
+      const pageGalleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const item = entry.target;
+            const col = item.closest('.masonry-column');
+            const colIndex = Array.from(galleryPageCols).indexOf(col);
+            item.classList.add('will-animate');
+            setTimeout(() => {
+              item.classList.add('is-visible');
+              item.addEventListener('transitionend', () => {
+                item.classList.remove('will-animate');
+              }, { once: true });
+            }, colIndex * 80);
+            pageGalleryObserver.unobserve(item);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      galleryPageCols.forEach((col) => {
+        col.querySelectorAll('.gallery-item').forEach((item) => {
+          pageGalleryObserver.observe(item);
+        });
       });
     }
 
